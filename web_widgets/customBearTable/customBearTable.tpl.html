@@ -1,0 +1,207 @@
+<!-- The custom widget template is defined here
+   - You can use standard HTML tags and AngularJS built-in directives, scope and interpolation system
+   - Custom widget properties defined on the right can be used as variables in a templates with properties.newProperty
+   - Functions exposed in the controller can be used with ctrl.newFunction()
+ -->
+<span ng-if="environment"><identicon name="{{environment.component.id}}" size="30" background-color="[255,255,255, 0]" foreground-color="[51,51,51]"></identicon> {{environment.component.name}}</span>
+
+
+{{ctrl.message}}
+
+<table class="{{ctrl.getTableCss()}}" style="{{ctrl.getStyleCss()}}">					
+    <tr>
+	    <th ng-repeat="header in ctrl.getHeader() track by $index" 
+	        style="{{ctrl.getStyleHeader( header )}}"
+	        colspan="{{ctrl.getColSpan(header, null)}}">
+	        {{header.title}}
+	            <a ng-show="header.order == true" href="#" ng-click="ctrl.setOrder( header.name, ! ctrl.isReverseSort());" style="text-decoration:none">
+					<span ng-show="ctrl.getOrderByField() != header.name" class="glyphicon glyphicon-chevron-minus">-</span>
+					<span ng-show="ctrl.getOrderByField() === header.name && ctrl.isReverseSort()" class="glyphicon glyphicon-chevron-down"></span>
+					<span ng-show="ctrl.getOrderByField() === header.name && ! ctrl.isReverseSort() " class="glyphicon glyphicon-chevron-up"></span>
+				</a>
+		    <div ng-if="header.filter==true" >
+			    <br>
+			    <input type="text" ng-model="ctrl.filterrecord[header.name]" size="15" 
+			    class="form-control filter-control"
+				title="Filter: only lines which contains this value are shown"/>
+		    </div>
+	    </th>
+    </tr>
+    <tbody  ng-repeat="oneRecord in ctrl.getRecordsPage() track by $index">
+	
+	<tr 	ng-show="! ctrl.getActionHideLine( oneRecord )" style="padding:5px; " >
+	   	<td ng-repeat="header in ctrl.getHeader( oneRecord ) track by $index" 
+	   	    style="{{ctrl.getActionStyleCell(header, oneRecord)}};padding:5px; "
+	   	    colspan="{{ctrl.getColSpan(header, oneRecord)}}">
+		   
+		    <div ng-if="ctrl.isShowDebugHeader( header )">ctrl:{{header.control}}</div>
+		    
+		    
+		    <div ng-if="ctrl.getSubtitle(header, oneRecord) !== ''">
+		        <i><small>{{ctrl.getSubtitle(header, oneRecord)}}</small></i><br>
+		    </div>
+		    
+		    <div ng-if="header.control === 'link'">
+		        <a href="oneRecord[ header.name ]" title="{{header.tips}}">{{header.title}}</a>
+		    </div>
+		    <div ng-if="header.control === 'button'">
+		        <button ng-click="oneRecord[ header.name ]" title="{{header.tips}}">Click</button>
+		    </div>
+		     <div ng-if="header.control === 'remove'">
+		        <button ng-click="ctrl.btnRemove(header, oneRecord)" 
+		            title="{{header.tips}}" 
+		            ng-disabled="ctrl.getActionReadOnly(header, oneRecord );"
+		            class="{{ctrl.getBtnCss( header, oneRecord, 'btn btn-danger btn-xs')}}">{{ctrl.getBtnLabel(header, oneRecord, "Remove")}}</button>
+		    </div>
+		     <div ng-if="header.control === 'insert'">
+		        <button ng-click="ctrl.btnInsert(header, oneRecord,0)" 
+		                title="{{header.tips}}" 
+		                ng-disabled="ctrl.getActionReadOnly(header, oneRecord );"
+		                class="{{ctrl.getBtnCss( header, oneRecord, 'btn btn-success btn-xs')}}">{{ctrl.getBtnLabel(header, oneRecord, "Insert")}}</button>
+		    </div>
+		     <div ng-if="header.control === 'add'">
+		        <button ng-click="ctrl.btnInsert(header, oneRecord,1)" 
+		            title="{{header.tips}}" 
+		            ng-disabled="ctrl.getActionReadOnly(header, oneRecord );"
+		            class="{{ctrl.getBtnCss( header, oneRecord, 'btn btn-success btn-xs')}}">{{ctrl.getBtnLabel(header, oneRecord, "Add")}}</button>
+		    </div>
+			<div ng-if="header.control === 'select'">
+			    <!-- ng-init="oneRecord[ header.name + '_select'] = ctrl.getWSelectGetSelected(header, oneRecord )" -->
+		    	<select ng-model="oneRecord[  header.name+'_select' ]" 
+			            ng-options="ctrl.getWSelectDisplayFromItem(header, item) for item in ctrl.getWSelectListOptionsItem(header)"
+			            ng-change="oneRecord[ header.name ]= ctrl.getWSelectItemToKey(header, oneRecord[ header.name+'_select' ]);ctrl.checkRules()"
+			            ng-disabled="ctrl.getActionReadOnly(header, oneRecord );"
+			            style="display:block;width=100%;height:26px;{{ctrl.getActionStyleCell(header, oneRecord)}}"
+			             title="{{header.tips}}">
+		    	</select>
+		    	<div ng-if="ctrl.isShowDebug()">
+		    	    value:{{oneRecord[  header.name ]}}
+		    	    Value_select:{{oneRecord[  header.name+'_select' ]}}<br>
+                    List:{{ctrl.getWSelectListOptionsItem(header)}}
+                </div>
+		    </div>
+		    <div ng-if="header.control === 'textselect'">
+		        <div style="display:block;width=100%;height:26px;{{ctrl.getActionStyleCell(header, oneRecord)}}">
+                    {{ctrl.getWSelectDisplayFromListItem(header, oneRecord[  header.name+'_select' ])}}
+                </div>
+		    	
+		    	<div ng-if="ctrl.isShowDebugHeader( header )">
+            	    Value:{{oneRecord[  header.name+'_select' ]}}<br>
+                    List:{{ctrl.getWSelectListOptionsItem(header)}}
+                </div>
+		    </div>
+		    
+		    <div ng-if="header.control === 'checkboxlist'">
+		        <div ng-repeat="item in ctrl.getWSelectListOptionsItem(header)">
+		            <input type="checkbox" name="{{item.display}}" value="{{item.key}}" 
+		                ng-change="ctrl.changeCheckList( header, oneRecord, item.key) "  
+		                ng-model="oneRecord[ header.name+'_'+item.key]"
+		                ng-disabled="ctrl.getActionReadOnly(header, oneRecord);">{{item.display}}<br>
+		        </div>
+		    </div>
+			<div ng-if="header.control === 'input'">
+		    	<input ng-model="oneRecord[ header.name ]" size="{{header.size}}"  
+		    	    ng-change="ctrl.checkRules()"
+		    	    ng-disabled="ctrl.getActionReadOnly(header, oneRecord);" title="{{header.tips}}"/>
+		    </div>
+		    <div ng-if="header.control === 'textarea'">
+		    	<textarea ng-model="oneRecord[ header.name ]" row="{{header.row}}" cols="{{header.cols}}"  
+		    	    ng-change="ctrl.checkRules()"
+		    	    ng-disabled="ctrl.getActionReadOnly(header, oneRecord);" title="{{header.tips}}"></textarea>
+		    </div>
+			<div ng-if="header.control === 'text'">
+		    	{{oneRecord[  header.name ] }}
+		    </div>
+		    <div ng-if="header.control === 'number'">
+		    	<input ng-model="oneRecord[  header.name ]" style="width: {{header.size}}px" 
+		    	    type="number" 
+		    	    ng-change="ctrl.checkRules()"
+		    	    ng-disabled="ctrl.getActionReadOnly(header, oneRecord);" title="{{header.tips}}"/>
+		    </div>
+		    <div ng-if="header.control === 'password'">
+		    	<input ng-model="oneRecord[  header.name ]" size="{{header.size}}" type="password"
+		    	 ng-disabled="ctrl.getActionReadOnly(header, oneRecord);" title="{{header.tips}}"/>
+		    </div>
+            	<div ng-if="header.control === 'email'">
+		    	<input ng-model="oneRecord[  header.name ]" size="{{header.size}}" type="email"  ng-change="ctrl.checkRules()"
+		    	 ng-disabled="ctrl.getActionReadOnly(header, oneRecord);" title="{{header.tips}}"/>
+		    </div>
+            <div ng-if="header.control === 'date'">
+		    	<input ng-model="oneRecord[ header.name ]" size="{{header.size}}" type="date" 
+		    	 ng-disabled="ctrl.getActionReadOnly(header, oneRecord);" title="{{header.tips}}"/>
+		    </div>
+		     <div ng-if="header.control === 'datelong'">
+		    	<input ng-model="oneRecord[ header.name +'_date' ]" size="{{header.size}}" type="date" 
+		    	      value="{{ctrl.getWSelectDateLongInitValue(header, oneRecord[ header.name ])}}"
+		    	      ng-change="oneRecord[ header.name ]= ctrl.getWSelectDateLongFromDate(header, oneRecord[ header.name+'_date' ]);ctrl.checkRules()"
+			          ng-disabled="ctrl.getActionReadOnly(header, oneRecord);"  title="{{header.tips}}"/>
+
+		    </div>
+		     <div ng-if="header.control === 'datetime'">
+		    	<input ng-model="oneRecord[  header.name ]" size="{{header.size}}" type="datetime"
+		    	 ng-disabled="ctrl.getActionReadOnly(header, oneRecord);" title="{{header.tips}}"/>
+		    </div>
+		     <div ng-if="header.control === 'time'">
+		    	<input ng-model="oneRecord[  header.name ]" size="{{header.size}}" type="time"
+		    	 ng-disabled="ctrl.getActionReadOnly(header, oneRecord);" title="{{header.tips}}"
+		    	 ng-show="header.control === 'time'"/>
+		    </div>
+		     <div ng-if="header.control === 'hour'">
+		    	<input ng-model="oneRecord[  header.name ]" size="{{header.size}}" type="hour"
+		    	 ng-disabled="ctrl.getActionReadOnly(header, oneRecord);" title="{{header.tips}}"/>
+		    </div>
+			 <div ng-if="header.control === 'checkbox'">
+		    	<input ng-model="oneRecord[ header.name ]" size="{{header.size}}" type="checkbox"
+		    	 ng-disabled="ctrl.getActionReadOnly(header, oneRecord);" title="{{header.tips}}"/>
+		    	<div ng-if="ctrl.isShowDebugHeader( header )">dis:{{ctrl.getActionReadOnly(header, oneRecord);}}</div>
+		    </div>
+		     <div ng-if="header.control === 'children'">
+		    	<input ng-model="oneRecord[  header.name+'_bearwidget' ]" size="{{header.size}}" type="checkbox"
+		    	 ng-disabled="ctrl.getActionReadOnly(header, oneRecord);" title="{{header.tips}}"/>
+		    </div>
+		    <div ng-if="header.control === 'contentjson'">
+		    	{{oneRecord}}
+		    </div>
+		    <!--
+		    <div ng-show="header.control === 'piechart'">
+		        <canvas id="pie" class="chart chart-pie" chart-data="ctrl.getListPieData( header )" chart-labels="ctrl.getListPieHeader( header )" legend="true"></canvas>
+		        Pie-Data {{ctrl.getListPieData( header )}} Pie-label:{{ctrl.getListPieHeader( header )}}
+		    </div>
+		    -->
+		</td>		
+		
+	    <!-- <td>Control={{ctrl.getHeader()}}<br>OneRecord={{onerecord}}</td> -->
+					
+	</tr>		
+	</tbody>
+</table>
+
+<span class="label label-danger">{{ctrl.getErrorMessage()}}</span>
+
+<!-- Total number : {{ctrl.getRecordsNumber()}} / {{ctrl.getRecordsFilterNumber()}} -->
+
+<div ng-show="ctrl.isShowDebug()">
+    Debug Content:{{ctrl.getContent()}}
+</div>
+
+<div ng-show="ctrl.isShowPagination()">
+        <table>
+            <tr>
+                <td>Records per pages
+		            <select ng-model="ctrl.recorditemsperpage" ng-show="true" >
+		                <option ng-repeat="item in ctrl.getStepPagination()" value="{{item.value}}">{{item.name}}</option>
+        		    </select>
+		        </td>
+		        <td>
+            		<!-- PageNumber={{ctrl.recordpagenumber}} total-items={{ctrl.getRecordsFilterNumber()}} item/page {{ctrl.getRecordsItemPerPage()}} -->
+            		<!-- we should branch getRecordsFilterNumber() but it's not working... -->
+            		<pagination ng-show="true" ng-model="ctrl.recordpagenumber" total-items="ctrl.getRecordsNumber()" items-per-page="ctrl.recorditemsperpage">
+		            </pagination>
+		        </td>
+		    </tr>
+		</table>
+</div>
+
+
+
+	

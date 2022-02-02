@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1" name="Organization_Data(4)">
+  <customUserInfoDefinitions/>
+  <users>
+    <user userName="badmin">
+      <firstName>badmin</firstName>
+      <lastName>badmin</lastName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>false</enabled>
+      <password encrypted="false">4dCUO2Go2yplfP/QqwRlZQ==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="Administrator">
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="true">F7+HlhUq4mLfrSSR4XQmyw==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="Guest">
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="true">F7+HlhUq4mLfrSSR4XQmyw==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="deicop">
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="true">F7+HlhUq4mLfrSSR4XQmyw==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="krbtgt">
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="true">F7+HlhUq4mLfrSSR4XQmyw==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="bonita">
+      <firstName>bonita</firstName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="false">F7+HlhUq4mLfrSSR4XQmyw==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="Jorge Sosa">
+      <firstName>Jorge</firstName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="true">F7+HlhUq4mLfrSSR4XQmyw==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="Isis Pineda">
+      <firstName>Isis</firstName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="true">F7+HlhUq4mLfrSSR4XQmyw==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="Victor Viana">
+      <firstName>Victor</firstName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="true">F7+HlhUq4mLfrSSR4XQmyw==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="Binduser">
+      <firstName>Binduser</firstName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="false">F7+HlhUq4mLfrSSR4XQmyw==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="Entrada">
+      <firstName>Entrada</firstName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="jefedeAduana">
+      <firstName>jefedeAduana</firstName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="Acciones">
+      <firstName>Acciones</firstName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="false">F7+HlhUq4mLfrSSR4XQmyw==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="ProcesoSalida">
+      <firstName>ProcesoSalida</firstName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="true">F7+HlhUq4mLfrSSR4XQmyw==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="demo05">
+      <firstName>demo05</firstName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="true">F7+HlhUq4mLfrSSR4XQmyw==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="demo06">
+      <firstName>demo06</firstName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="true">F7+HlhUq4mLfrSSR4XQmyw==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="deicop_emergency">
+      <firstName>deicop_emergency</firstName>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>true</enabled>
+      <password encrypted="true">F7+HlhUq4mLfrSSR4XQmyw==</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="walter.bates">
+      <firstName>walter</firstName>
+      <lastName>bates</lastName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <metaDatas/>
+      <enabled>false</enabled>
+      <password encrypted="false">LcTkpvvquKf4KO+prsfXrQ==</password>
+      <customUserInfoValues/>
+    </user>
+  </users>
+  <roles>
+    <role name="Member"/>
+    <role name="rolEntrada">
+      <displayName>rolEntrada</displayName>
+      <description></description>
+    </role>
+    <role name="rolJefedeAduana">
+      <displayName>rolJefedeAduana</displayName>
+    </role>
+    <role name="rolAcciones">
+      <displayName>rolAcciones</displayName>
+    </role>
+    <role name="rolProcesoSalida">
+      <displayName>rolProcesoSalida</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="Bonitausers"/>
+    <group name="Users"/>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>Entrada</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003423</assignedDate>
+    </membership>
+    <membership>
+      <userName>jefedeAduana</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003453</assignedDate>
+    </membership>
+    <membership>
+      <userName>Isis Pineda</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003455</assignedDate>
+    </membership>
+    <membership>
+      <userName>Administrator</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003459</assignedDate>
+    </membership>
+    <membership>
+      <userName>demo05</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003464</assignedDate>
+    </membership>
+    <membership>
+      <userName>ProcesoSalida</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003466</assignedDate>
+    </membership>
+    <membership>
+      <userName>deicop_emergency</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003468</assignedDate>
+    </membership>
+    <membership>
+      <userName>deicop</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003470</assignedDate>
+    </membership>
+    <membership>
+      <userName>Victor Viana</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003472</assignedDate>
+    </membership>
+    <membership>
+      <userName>Guest</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003475</assignedDate>
+    </membership>
+    <membership>
+      <userName>bonita</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003476</assignedDate>
+    </membership>
+    <membership>
+      <userName>demo06</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003481</assignedDate>
+    </membership>
+    <membership>
+      <userName>Acciones</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003487</assignedDate>
+    </membership>
+    <membership>
+      <userName>krbtgt</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003489</assignedDate>
+    </membership>
+    <membership>
+      <userName>Jorge Sosa</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003490</assignedDate>
+    </membership>
+    <membership>
+      <userName>Binduser</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449003492</assignedDate>
+    </membership>
+    <membership>
+      <userName>Entrada</userName>
+      <roleName>rolEntrada</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449528620</assignedDate>
+    </membership>
+    <membership>
+      <userName>Acciones</userName>
+      <roleName>rolAcciones</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449783808</assignedDate>
+    </membership>
+    <membership>
+      <userName>ProcesoSalida</userName>
+      <roleName>rolProcesoSalida</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449839253</assignedDate>
+    </membership>
+    <membership>
+      <userName>jefedeAduana</userName>
+      <roleName>rolJefedeAduana</roleName>
+      <groupName>Users</groupName>
+      <assignedDate>1600449877498</assignedDate>
+    </membership>
+    <membership>
+      <userName>badmin</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+    </membership>
+    <membership>
+      <userName>walter.bates</userName>
+      <roleName>Member</roleName>
+      <groupName>Users</groupName>
+    </membership>
+  </memberships>
+</organization:Organization>

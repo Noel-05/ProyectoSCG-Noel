@@ -1,0 +1,158 @@
+{
+  "modelVersion" : "2.2",
+  "previousArtifactVersion" : "1.10.12",
+  "properties" : [
+    {
+      "label" : "Value",
+      "name" : "value",
+      "type" : "text",
+      "defaultValue" : "This is the initial value",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Table CSS Classes",
+      "name" : "tablecssclass",
+      "type" : "text",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Table CSS Style",
+      "name" : "tablecssstyle",
+      "type" : "text",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Header List",
+      "name" : "headervalue",
+      "type" : "collection",
+      "defaultValue" : [
+        "[ {\"title\":\"Colum  name\"",
+        "\"filter\": yes",
+        "\"order\":yes",
+        "\"control\":\"input\" }",
+        "{\"title\":\"Colum  name\"",
+        "\"filter\": yes",
+        "\"order\":yes",
+        "\"control\":\"select\" }",
+        "{\"title\":\"Colum  name\"",
+        "\"filter\": yes",
+        "\"order\":yes",
+        "\"control\":\"link\" }",
+        "{\"title\":\"Colum  name\"",
+        "\"filter\": yes",
+        "\"order\":yes",
+        "\"control\":\"button\" } ]"
+      ],
+      "bond" : "expression"
+    },
+    {
+      "label" : "Dynamic List",
+      "name" : "dynamicLists",
+      "type" : "text",
+      "defaultValue" : "{ \"listscreen\" : [ {\"key\":\"TA\", \"name\":\"Tablette\"} , {\"key\":\"PC\", \"name\":\"Computer\"} ] }",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Show Debug",
+      "name" : "showdebug",
+      "type" : "boolean",
+      "defaultValue" : false,
+      "bond" : "expression"
+    },
+    {
+      "label" : "Label",
+      "name" : "Label",
+      "type" : "text",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Checks Rules",
+      "name" : "checkrules",
+      "type" : "text",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Actions Rules",
+      "name" : "actionsRules",
+      "type" : "text",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Pagination",
+      "name" : "pagination",
+      "type" : "collection",
+      "defaultValue" : [
+        "[ {\"name\" : \"10 lines\"",
+        "\"value\":10}",
+        "{\"name\" : \"50 lines\"",
+        "\"value\":50}",
+        "{\"name\" : \"100 lines\"",
+        "\"value\":100} ]"
+      ],
+      "bond" : "expression"
+    }
+  ],
+  "id" : "customBearTable",
+  "name" : "BearTable",
+  "lastUpdate" : 1643214736864,
+  "template" : "@customBearTable.tpl.html",
+  "controller" : "@customBearTable.ctrl.js",
+  "description" : "Display a table, with rich control. Via the header, different mechanism can be controlled:\n* sort the column, yes or no\n* filter the column, yes or no\n* type of the control for the record : input, text, select, link, button",
+  "custom" : true,
+  "assets" : [
+    {
+      "id" : "83310789-eacf-4a21-b1f7-b59a37727b1b",
+      "name" : "angular-chart-0.8.1.css",
+      "type" : "css",
+      "order" : 7,
+      "external" : false
+    },
+    {
+      "id" : "92d57f88-0fe7-4e8c-9c9d-ffd639fb2753",
+      "name" : "Chart-1.0.2.min.js",
+      "type" : "js",
+      "order" : 8,
+      "external" : false
+    },
+    {
+      "id" : "c911f578-3265-4ee1-b80c-bed746027dec",
+      "name" : "angular-filter.min.js",
+      "type" : "js",
+      "order" : 1,
+      "external" : false
+    },
+    {
+      "id" : "d25a51d3-ddab-452b-94c8-cb4fa838eca5",
+      "name" : "ui-bootstrap-tpls-0.13.0.min.js",
+      "type" : "js",
+      "order" : 10,
+      "external" : false
+    },
+    {
+      "id" : "f157161e-7880-4cb4-a450-612e9303e7f1",
+      "name" : "angular-chart-0.8.1.min.js",
+      "type" : "js",
+      "order" : 9,
+      "external" : false
+    },
+    {
+      "id" : "2f3c8dbb-f71f-45db-9bfe-c28682434348",
+      "name" : "numeral.min.js",
+      "type" : "js",
+      "order" : 2,
+      "external" : false
+    },
+    {
+      "id" : "14474f4c-0a80-483b-a257-1d8782f3a482",
+      "name" : "richetable.css",
+      "type" : "css",
+      "order" : 6,
+      "external" : false
+    }
+  ],
+  "requiredModules" : [
+    "ui.bootstrap"
+  ],
+  "type" : "widget",
+  "hasHelp" : false
+}

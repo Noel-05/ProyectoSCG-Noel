@@ -1,0 +1,25 @@
+{
+  "modelVersion" : "2.2",
+  "previousArtifactVersion" : "1.11.52",
+  "id" : "HomeCustomPage",
+  "name" : "HomeCustomPage",
+  "lastUpdate" : 1643214735339,
+  "rows" : [
+    [ ]
+  ],
+  "assets" : [
+    {
+      "id" : "f72c3021-3d25-457f-ba03-ed2c1b4e21b8",
+      "name" : "style.css",
+      "type" : "css",
+      "order" : 0,
+      "external" : false
+    }
+  ],
+  "inactiveAssets" : [ ],
+  "variables" : { },
+  "hasValidationError" : false,
+  "uuid" : "f5199c47-3609-4e5e-b1c8-8bc54ada4cb0",
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer"
+}

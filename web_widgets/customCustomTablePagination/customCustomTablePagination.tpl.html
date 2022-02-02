@@ -1,0 +1,30 @@
+<div class="table-responsive">
+    <input 
+    class="form-control" 
+    ng-model = "search" 
+    type="text" placeholder="Search">
+    <br>
+<table class="table table-striped" ng-class="{'table-hover': ctrl.isClickable()}">
+        <thead>
+            <tr>
+                <th ng-repeat="header in properties.headers"  ng-click="sort(properties.columnsKey[$index])">
+                    {{ header | uiTranslate }}
+                    <span class="glyphicon sort-icon" ng-show="sortKey==properties.columnsKey[$index]" ng-class="{'glyphicon-chevron-up':reverse, 'glyphicon-chevron-down':!reverse}"></span>
+                </th>
+            </tr>
+        </thead>
+        <tbody ng-if="ctrl.isArray(properties.content) && ctrl.isArray(properties.columnsKey)">
+            <tr dir-paginate="row in filterList.length == undefined ? properties.content : filterList | orderBy:sortKey:reverse | itemsPerPage: properties.itemsPerPage | filter : search" ng-click="ctrl.selectRow(row)" ng-class="{'info': ctrl.isSelected(row)}" pagination-id="people">
+                <td ng-repeat="column in properties.columnsKey track by $index" >
+                    {{ $eval(column, row) | uiTranslate }}
+                </td>
+            </tr>
+        </tbody>
+        <tbody ng-if="ctrl.isArray(properties.content) && !ctrl.isArray(properties.columnsKey)">
+            <tr dir-paginate="row in properties.content" ng-click="ctrl.selectRow(row)" ng-class="{'info': ctrl.isSelected(row)}">
+                <td> {{ row | uiTranslate }} </td>
+            </tr>
+        </tbody>
+    </table>
+    <dir-pagination-controls pagination-id="people" class="pull-right"></dir-pagination-controls>
+</div>

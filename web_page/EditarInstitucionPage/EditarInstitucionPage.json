@@ -1,0 +1,909 @@
+{
+  "modelVersion" : "2.2",
+  "previousArtifactVersion" : "1.11.46",
+  "id" : "EditarInstitucionPage",
+  "name" : "EditarInstitucionPage",
+  "lastUpdate" : 1643214735151,
+  "rows" : [
+    [
+      {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "repeatedCollection" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "14901266-1362-470b-a978-a0e96c4d9065",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12
+              },
+              "propertyValues" : {
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "level" : {
+                  "type" : "constant",
+                  "value" : "Level 2"
+                },
+                "widgetId" : {
+                  "type" : "constant",
+                  "value" : "pbTitle"
+                },
+                "cssClasses" : {
+                  "type" : "expression",
+                  "value" : ""
+                },
+                "readOnly" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "Institución"
+                },
+                "label" : {
+                  "type" : "interpolation"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "center"
+                },
+                "dimension" : {
+                  "type" : "constant",
+                  "value" : 12
+                },
+                "class" : {
+                  "type" : "constant",
+                  "value" : "org.bonitasoft.web.designer.experimental.parametrizedWidget.TitleWidget"
+                }
+              },
+              "reference" : "11135fd6-82be-44eb-9a8f-ae34c460fdf8",
+              "hasValidationError" : false,
+              "id" : "pbTitle"
+            }
+          ],
+          [
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 2
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "917c8be3-c21e-4dad-9040-dce4c2e91b0b",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [ ]
+              ]
+            },
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 8
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Default label"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "<div class=\"alert alert-info\" translate><i class=\"\tglyphicon glyphicon-edit\" ></i>  A continuación puede modificar la información correspondientes a cada institución. </div>"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "1d87594b-f803-456e-b1fc-1c4fe046f016",
+              "hasValidationError" : false,
+              "id" : "pbText"
+            },
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 2
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "74f4c1a0-2014-4ce5-adc4-055f1dc0d1fd",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [ ]
+              ]
+            }
+          ]
+        ]
+      }
+    ],
+    [
+      {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "repeatedCollection" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "1553fb53-9fb0-43ed-b730-b98266a7797f",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [
+          [
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 2
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "43ced09d-c544-4c95-ae9c-8e2d7635fa19",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [ ]
+              ]
+            },
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 8
+              },
+              "propertyValues" : {
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "widgetId" : {
+                  "type" : "constant"
+                },
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "readOnly" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "label" : {
+                  "type" : "interpolation"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                },
+                "dimension" : {
+                  "type" : "constant",
+                  "value" : 12
+                },
+                "class" : {
+                  "type" : "constant",
+                  "value" : "org.bonitasoft.web.designer.experimental.parametrizedWidget.WidgetContainer"
+                }
+              },
+              "reference" : "5d8add15-2532-4993-922b-3c9ff9a91438",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6
+                    },
+                    "propertyValues" : {
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "widgetId" : {
+                        "type" : "constant",
+                        "value" : "pbInput"
+                      },
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "readOnly" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 1
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Correo de Alerta"
+                      },
+                      "type" : {
+                        "type" : "constant",
+                        "value" : "email"
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "placeholder" : {
+                        "type" : "constant"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "institucion.correo_alerta"
+                      },
+                      "dimension" : {
+                        "type" : "constant",
+                        "value" : 12
+                      },
+                      "class" : {
+                        "type" : "constant",
+                        "value" : "org.bonitasoft.web.designer.experimental.parametrizedWidget.InputWidget"
+                      },
+                      "minLength" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "maxLength" : {
+                        "type" : "constant",
+                        "value" : 100
+                      },
+                      "min" : {
+                        "type" : "constant"
+                      },
+                      "max" : {
+                        "type" : "constant"
+                      },
+                      "step" : {
+                        "type" : "constant",
+                        "value" : 1
+                      }
+                    },
+                    "reference" : "aa12a988-2222-4432-8051-7b8251c376a4",
+                    "hasValidationError" : false,
+                    "id" : "pbInput"
+                  },
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "disabled" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Estado"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "placeholder" : {
+                        "type" : "interpolation",
+                        "value" : "Seleccione una opcion"
+                      },
+                      "availableValues" : {
+                        "type" : "expression",
+                        "value" : "estados"
+                      },
+                      "displayedKey" : {
+                        "type" : "constant",
+                        "value" : "label"
+                      },
+                      "returnedKey" : {
+                        "type" : "constant",
+                        "value" : "id"
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "institucion.estado_registro"
+                      }
+                    },
+                    "reference" : "5496ca4d-e234-48e5-a85b-23533e02f02f",
+                    "hasValidationError" : false,
+                    "id" : "pbSelect"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "disabled" : {
+                        "type" : "expression",
+                        "value" : "institucion==null || institucion.persistenceId ==null"
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Editar Institución"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "center"
+                      },
+                      "buttonStyle" : {
+                        "type" : "constant",
+                        "value" : "success"
+                      },
+                      "action" : {
+                        "type" : "constant",
+                        "value" : "POST"
+                      },
+                      "url" : {
+                        "type" : "interpolation",
+                        "value" : "{{urlStartEditarInstitucion}}"
+                      },
+                      "dataToSend" : {
+                        "type" : "expression",
+                        "value" : "formOutput"
+                      },
+                      "dataFromSuccess" : {
+                        "type" : "variable",
+                        "value" : ""
+                      },
+                      "dataFromError" : {
+                        "type" : "variable",
+                        "value" : "formError"
+                      },
+                      "targetUrlOnSuccess" : {
+                        "type" : "interpolation",
+                        "value" : "/bonita/apps/aplicacionSCGjefe/jefeinstitucion/"
+                      },
+                      "collectionToModify" : {
+                        "type" : "variable"
+                      },
+                      "collectionPosition" : {
+                        "type" : "constant",
+                        "value" : "Last"
+                      },
+                      "valueToAdd" : {
+                        "type" : "constant"
+                      },
+                      "removeItem" : {
+                        "type" : "variable"
+                      },
+                      "displayIcon" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "buttonIcon" : {
+                        "type" : "interpolation",
+                        "value" : "floppy-disk"
+                      },
+                      "displayConfirm" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "confirmMessage" : {
+                        "type" : "interpolation",
+                        "value" : "¿Esta seguro de actualizar el registro ?"
+                      },
+                      "customStyle" : {
+                        "type" : "interpolation",
+                        "value" : "{ }"
+                      }
+                    },
+                    "reference" : "5464ec9a-493c-4032-bb05-30dd1f300517",
+                    "hasValidationError" : false,
+                    "id" : "customWidgetButton"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "formError == null"
+                      },
+                      "message" : {
+                        "type" : "variable",
+                        "value" : "formError"
+                      },
+                      "style" : {
+                        "type" : "constant",
+                        "value" : "alert-danger"
+                      },
+                      "isDismissible" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Error:"
+                      }
+                    },
+                    "reference" : "5529414c-636b-4c10-aeaf-affec464e4d0",
+                    "hasValidationError" : false,
+                    "id" : "customAlert"
+                  }
+                ]
+              ]
+            },
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 2
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "18b1187d-6777-4e02-a01f-ba57660a2381",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [ ]
+              ]
+            }
+          ],
+          [
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 1
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "2837464e-6aad-4ef7-9a52-1bf36a3270da",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [ ]
+              ]
+            },
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 10
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "269ae4b5-e2c1-429a-b514-a60ee26ae24e",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Default label"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "allowHTML" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "text" : {
+                        "type" : "interpolation",
+                        "value" : "<b>Seleccione un registro de la siguiente tabla para editar</b>"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      }
+                    },
+                    "reference" : "6057aaf3-b1e1-4734-a27f-58c86d8e9b07",
+                    "hasValidationError" : false,
+                    "id" : "pbText"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "allowHTML" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "headers" : {
+                        "type" : "constant",
+                        "value" : [
+                          "Código",
+                          "Nombre",
+                          "Siglas",
+                          "Correo de Alerta",
+                          "Estado"
+                        ]
+                      },
+                      "content" : {
+                        "type" : "expression",
+                        "value" : "institucionTable"
+                      },
+                      "columnsKey" : {
+                        "type" : "constant",
+                        "value" : [
+                          "codigo_institucion",
+                          "nombre_institucion",
+                          "siglas_institucion",
+                          "correo_alerta",
+                          "estado_registro"
+                        ]
+                      },
+                      "selectedRow" : {
+                        "type" : "variable",
+                        "value" : "institucion"
+                      },
+                      "striped" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "condensed" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "bordered" : {
+                        "type" : "constant",
+                        "value" : true
+                      }
+                    },
+                    "reference" : "b5af7a72-4f68-44bb-8099-bd06c393d905",
+                    "hasValidationError" : false,
+                    "id" : "pbTable"
+                  }
+                ]
+              ]
+            },
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 1
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "54eb8ad0-a030-4023-954c-b5424ec47db2",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [ ]
+              ]
+            }
+          ]
+        ]
+      }
+    ]
+  ],
+  "assets" : [
+    {
+      "id" : "68bb8d8f-b22c-40db-b168-576351ac7b98",
+      "name" : "style.css",
+      "type" : "css",
+      "order" : 0,
+      "external" : false
+    },
+    {
+      "id" : "743af23e-75f2-490b-9efd-68aedf8f8fcb",
+      "name" : "validationStyle.css",
+      "type" : "css",
+      "order" : 1,
+      "external" : false
+    }
+  ],
+  "inactiveAssets" : [ ],
+  "variables" : {
+    "formOutput" : {
+      "type" : "expression",
+      "value" : [
+        "if( $data.institucion ){",
+        "\treturn {",
+        "\t\t\"institucionId\": $data.institucion.persistenceId !== undefined ? $data.institucion.persistenceId : null,",
+        "\t\t\"correoAlerta\": $data.institucion.correo_alerta !== undefined ? $data.institucion.correo_alerta : null,",
+        "\t\t\"fechaMod\": $data.fecha!== undefined ? $data.fecha : null,",
+        "\t\t\"usuarioMod\": $data.user.user_id !== undefined ? $data.user.user_id : null,",
+        "\t\t\"estado\": $data.institucion.estado_registro !== undefined ? $data.institucion.estado_registro : null",
+        "\t    ",
+        "\t}",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "formError" : {
+      "type" : "constant",
+      "exposed" : false
+    },
+    "estados" : {
+      "type" : "json",
+      "value" : [
+        "[",
+        "    {",
+        "    \"id\":\"A\",",
+        "    \"label\":\"ACTIVA\"",
+        "    },",
+        "    {",
+        "    \"id\":\"I\",",
+        "    \"label\":\"INACTIVA\"",
+        "    }",
+        "]"
+      ],
+      "exposed" : false
+    },
+    "institucionTable" : {
+      "type" : "businessdata",
+      "value" : [
+        "{\"displayValue\":\"find [com.company.model.Institucion]\",\"businessObjectName\":\"Institucion\",\"query\":{\"name\":\"find\",\"displayName\":\"find\"},\"id\":\"com.company.model.Institucion\",\"filters\":[],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
+      ],
+      "exposed" : false
+    },
+    "institucion" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.institucion_ref.link}}"
+      ],
+      "exposed" : false
+    },
+    "user" : {
+      "type" : "url",
+      "value" : [
+        "../API/system/session/1"
+      ],
+      "exposed" : false
+    },
+    "fecha" : {
+      "type" : "expression",
+      "value" : [
+        "return new Date();"
+      ],
+      "exposed" : false
+    },
+    "starEditarInstitucion" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/process?s=EditarInstitucion &p=0&c=1&o=version%20DESC&f=activationState=ENABLED"
+      ],
+      "exposed" : false
+    },
+    "urlStartEditarInstitucion" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.starEditarInstitucion  && $data.starEditarInstitucion.length > 0) {\r",
+        "    var url =\"../API/bpm/process/\"+\r",
+        "    $data.starEditarInstitucion[0].id+\"/instantiation\";\r",
+        "    return url;\r",
+        "} else {\r",
+        "  return null;\r",
+        "}"
+      ],
+      "exposed" : false
+    }
+  },
+  "hasValidationError" : false,
+  "uuid" : "3f6d97d0-9dbd-49be-af18-2589501f410f",
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer"
+}

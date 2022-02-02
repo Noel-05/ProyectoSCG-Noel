@@ -1,0 +1,634 @@
+{
+  "modelVersion" : "2.2",
+  "id" : "AAAEditarTipoIncidente2",
+  "name" : "AAAEditarTipoIncidente2",
+  "lastUpdate" : 1643579834575,
+  "rows" : [
+    [
+      {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "repeatedCollection" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "1a8b0d6f-d463-4ff8-804a-f79b636fd873",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "Tipo de Incidente"
+                },
+                "level" : {
+                  "type" : "constant",
+                  "value" : "Level 2"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "cb092098-e6ce-44de-8d77-e2d3429850f9",
+              "hasValidationError" : false,
+              "id" : "pbTitle"
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "required" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "minLength" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "maxLength" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "readOnly" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "NombreTipoIncidente"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "placeholder" : {
+                  "type" : "interpolation"
+                },
+                "value" : {
+                  "type" : "variable",
+                  "value" : "tipoIncidente.nombre_tipo_incidente"
+                },
+                "type" : {
+                  "type" : "constant",
+                  "value" : "text"
+                },
+                "min" : {
+                  "type" : "constant"
+                },
+                "max" : {
+                  "type" : "constant"
+                },
+                "step" : {
+                  "type" : "constant",
+                  "value" : 1
+                }
+              },
+              "reference" : "b74b687c-d2b6-47d1-9301-0c2e9bb47a44",
+              "hasValidationError" : false,
+              "id" : "pbInput"
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 3
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "tipoIncidente==null || tipoIncidente.persistenceId ==null"
+                },
+                "disabled" : {
+                  "type" : "expression",
+                  "value" : "tipoIncidente==null || tipoIncidente.persistenceId ==null"
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Editar"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "center"
+                },
+                "buttonStyle" : {
+                  "type" : "constant",
+                  "value" : "success"
+                },
+                "action" : {
+                  "type" : "constant",
+                  "value" : "POST"
+                },
+                "url" : {
+                  "type" : "interpolation",
+                  "value" : "{{urlStarEditarTipoIncidente}}"
+                },
+                "dataToSend" : {
+                  "type" : "expression",
+                  "value" : "formOutput"
+                },
+                "dataFromSuccess" : {
+                  "type" : "variable",
+                  "value" : ""
+                },
+                "dataFromError" : {
+                  "type" : "variable",
+                  "value" : ""
+                },
+                "targetUrlOnSuccess" : {
+                  "type" : "interpolation",
+                  "value" : "/bonita/apps/aplicacionSCGjefe/tipoIncidente2/"
+                },
+                "collectionToModify" : {
+                  "type" : "variable"
+                },
+                "collectionPosition" : {
+                  "type" : "constant",
+                  "value" : "Last"
+                },
+                "valueToAdd" : {
+                  "type" : "constant"
+                },
+                "removeItem" : {
+                  "type" : "variable"
+                },
+                "displayIcon" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "buttonIcon" : {
+                  "type" : "interpolation",
+                  "value" : "ok"
+                },
+                "displayConfirm" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "confirmMessage" : {
+                  "type" : "interpolation",
+                  "value" : "Are you sure ?"
+                },
+                "customStyle" : {
+                  "type" : "interpolation",
+                  "value" : "{ }"
+                }
+              },
+              "reference" : "87eab55d-0a7d-4457-b012-63dce7bef388",
+              "hasValidationError" : false,
+              "id" : "customWidgetButton"
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "tipoIncidente.nombre_tipo_incidente==null"
+                },
+                "disabled" : {
+                  "type" : "expression",
+                  "value" : "tipoIncidente.nombre_tipo_incidente==null"
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Guardar"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "center"
+                },
+                "buttonStyle" : {
+                  "type" : "constant",
+                  "value" : "primary"
+                },
+                "action" : {
+                  "type" : "constant",
+                  "value" : "POST"
+                },
+                "url" : {
+                  "type" : "interpolation",
+                  "value" : "{{urlStarEditarTipoIncidente}}"
+                },
+                "dataToSend" : {
+                  "type" : "expression",
+                  "value" : "formOutput2"
+                },
+                "dataFromSuccess" : {
+                  "type" : "variable",
+                  "value" : ""
+                },
+                "dataFromError" : {
+                  "type" : "variable",
+                  "value" : ""
+                },
+                "targetUrlOnSuccess" : {
+                  "type" : "interpolation",
+                  "value" : "/bonita/apps/aplicacionSCGjefe/tipoIncidente2/"
+                },
+                "collectionToModify" : {
+                  "type" : "variable"
+                },
+                "collectionPosition" : {
+                  "type" : "constant",
+                  "value" : "Last"
+                },
+                "valueToAdd" : {
+                  "type" : "constant"
+                },
+                "removeItem" : {
+                  "type" : "variable"
+                },
+                "displayIcon" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "buttonIcon" : {
+                  "type" : "interpolation",
+                  "value" : "ok"
+                },
+                "displayConfirm" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "confirmMessage" : {
+                  "type" : "interpolation",
+                  "value" : "Are you sure to Save?"
+                },
+                "customStyle" : {
+                  "type" : "interpolation",
+                  "value" : "{ }"
+                }
+              },
+              "reference" : "3638ff4a-b0e1-4cfb-8751-69b6524219b9",
+              "hasValidationError" : false,
+              "id" : "customWidgetButton"
+            }
+          ]
+        ]
+      }
+    ],
+    [
+      {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "labelHidden" : {
+            "type" : "constant",
+            "value" : true
+          },
+          "label" : {
+            "type" : "interpolation",
+            "value" : "Default label"
+          },
+          "labelPosition" : {
+            "type" : "constant",
+            "value" : "top"
+          },
+          "labelWidth" : {
+            "type" : "constant",
+            "value" : 4
+          },
+          "allowHTML" : {
+            "type" : "constant",
+            "value" : true
+          },
+          "text" : {
+            "type" : "interpolation",
+            "value" : "<br></br>"
+          },
+          "alignment" : {
+            "type" : "constant",
+            "value" : "left"
+          }
+        },
+        "reference" : "b6f540bc-5741-4ca5-b05f-917e0c019129",
+        "hasValidationError" : false,
+        "id" : "pbText"
+      }
+    ],
+    [
+      {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "repeatedCollection" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "5951f7d2-22eb-47e2-a5d7-9b45d646cdc7",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Default label"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "Seleccione un Tipo Incidente. <br></br>"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "523f589b-1d37-470f-a9d4-7aac359ae201",
+              "hasValidationError" : false,
+              "id" : "pbText"
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "headers" : {
+                  "type" : "constant",
+                  "value" : [
+                    "Codigo",
+                    "Nombre",
+                    "Estado"
+                  ]
+                },
+                "content" : {
+                  "type" : "expression",
+                  "value" : "tipoIncidenteTable"
+                },
+                "columnsKey" : {
+                  "type" : "constant",
+                  "value" : [
+                    "codigo_tipo_incidente",
+                    "nombre_tipo_incidente",
+                    "estado_tipo_incidente"
+                  ]
+                },
+                "selectedRow" : {
+                  "type" : "variable",
+                  "value" : "tipoIncidente"
+                },
+                "striped" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "condensed" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "bordered" : {
+                  "type" : "constant",
+                  "value" : false
+                }
+              },
+              "reference" : "9387f622-8ff0-4890-ba17-d96daec921c2",
+              "hasValidationError" : false,
+              "id" : "pbTable"
+            }
+          ]
+        ]
+      }
+    ]
+  ],
+  "assets" : [
+    {
+      "id" : "1dc54784-d25d-421a-a956-e138a0512e36",
+      "name" : "style.css",
+      "type" : "css",
+      "order" : 0,
+      "external" : false
+    },
+    {
+      "id" : "499c4eab-92d9-4508-a541-97b104d82eb9",
+      "name" : "localization.json",
+      "type" : "json",
+      "order" : 0,
+      "external" : false
+    }
+  ],
+  "inactiveAssets" : [ ],
+  "variables" : {
+    "formOutput" : {
+      "type" : "expression",
+      "value" : [
+        "if( $data.tipoIncidente ){\r",
+        "\treturn {\r",
+        "\t\t\"codigoTipoIncidente\": $data.tipoIncidente.persistenceId !== undefined ? $data.tipoIncidente.persistenceId : null,\r",
+        "\t\t\"nombreTipoIncidente\": $data.tipoIncidente.nombre_tipo_incidente !== undefined ? $data.tipoIncidente.nombre_tipo_incidente : null\r",
+        "\t}\r",
+        "}\r"
+      ],
+      "exposed" : false
+    },
+    "starEditarTipoIncidente" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/process?s=AAAEditarTipoIncidencia2 &p=0&c=1&o=version%20DESC&f=activationState=ENABLED"
+      ],
+      "advancedOptions" : {
+        "headers" : "",
+        "statusCode" : "",
+        "failedResponseValue" : ""
+      },
+      "exposed" : false
+    },
+    "tipoIncidente" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.tipoIncidente_ref.link}}"
+      ],
+      "advancedOptions" : {
+        "headers" : "",
+        "statusCode" : "",
+        "failedResponseValue" : ""
+      },
+      "exposed" : false
+    },
+    "tipoIncidenteTable" : {
+      "type" : "businessdata",
+      "value" : [
+        "{\"displayValue\":\"find [com.company.model.TipoIncidente]\",\"businessObjectName\":\"TipoIncidente\",\"query\":{\"name\":\"find\",\"displayName\":\"find\"},\"id\":\"com.company.model.TipoIncidente\",\"filters\":[],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
+      ],
+      "exposed" : false
+    },
+    "urlStarEditarTipoIncidente" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.starEditarTipoIncidente  && $data.starEditarTipoIncidente.length > 0) {\r",
+        "    var url =\"../API/bpm/process/\"+\r",
+        "    $data.starEditarTipoIncidente[0].id+\"/instantiation\";\r",
+        "    return url;\r",
+        "} else {\r",
+        "  return null;\r",
+        "}\r"
+      ],
+      "exposed" : false
+    },
+    "formOutput2" : {
+      "type" : "expression",
+      "value" : [
+        "if( $data.tipoIncidente ){\r",
+        "\treturn {\r",
+        "\t    \"codigoTipoIncidente\": \"SC\",\r",
+        "\t\t\"nombreTipoIncidente\": $data.tipoIncidente.nombre_tipo_incidente !== undefined ? $data.tipoIncidente.nombre_tipo_incidente : null\r",
+        "\t}\r",
+        "}\r"
+      ],
+      "exposed" : false
+    }
+  },
+  "hasValidationError" : false,
+  "uuid" : "a977123f-70c3-42a0-b2ff-0974f8427f4a",
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer"
+}

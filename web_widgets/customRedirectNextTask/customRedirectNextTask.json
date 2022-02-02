@@ -1,0 +1,63 @@
+{
+  "modelVersion" : "2.2",
+  "previousArtifactVersion" : "1.10.12",
+  "properties" : [
+    {
+      "label" : "Time to wait (ms)",
+      "name" : "timeToWait",
+      "type" : "integer",
+      "defaultValue" : 500,
+      "bond" : "expression"
+    },
+    {
+      "label" : "Submit button successful response value",
+      "name" : "submitButtonSuccessfulResponseValue",
+      "type" : "text",
+      "choiceValues" : [
+        "RebeccaPurple",
+        "Chartreuse",
+        "Tomato",
+        "DeepSkyBlue"
+      ],
+      "bond" : "expression"
+    },
+    {
+      "label" : "Number of retries",
+      "name" : "numberOfRetries",
+      "type" : "integer",
+      "defaultValue" : 8,
+      "bond" : "expression"
+    },
+    {
+      "label" : "Bonita web app name",
+      "name" : "bonitaWebAppName",
+      "type" : "text",
+      "defaultValue" : "bonita",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Task id (for task form only)",
+      "name" : "taskId",
+      "type" : "text",
+      "defaultValue" : "taskId",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Message displayed",
+      "name" : "messageDisplayed",
+      "type" : "text",
+      "defaultValue" : "Searching for current user next task in current case",
+      "bond" : "expression"
+    }
+  ],
+  "id" : "customRedirectNextTask",
+  "name" : "redirectNextTask",
+  "lastUpdate" : 1643214737055,
+  "template" : "@customRedirectNextTask.tpl.html",
+  "controller" : "@customRedirectNextTask.ctrl.js",
+  "custom" : true,
+  "assets" : [ ],
+  "requiredModules" : [ ],
+  "type" : "widget",
+  "hasHelp" : false
+}

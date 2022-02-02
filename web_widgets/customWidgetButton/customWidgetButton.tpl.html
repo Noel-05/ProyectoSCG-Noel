@@ -1,0 +1,11 @@
+<div class="text-{{ properties.alignment }}">
+    <button ng-class="'btn btn-' + properties.buttonStyle" 
+            ng-click="ctrl.action()"        
+            type="button"
+            ng-disabled="properties.disabled || ctrl.busy"
+            ng-style="{{ properties.customStyle }}">
+        
+        <i class="glyphicon glyphicon-{{ properties.buttonIcon }}" ng-if="properties.displayIcon"></i> {{ properties.label | uiTranslate }}
+        <span ng-class="properties.iconClass"></span>
+    </button>
+</div>

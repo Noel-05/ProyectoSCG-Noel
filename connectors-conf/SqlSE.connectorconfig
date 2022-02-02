@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connectorconfiguration:ConnectorConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" definitionId="database-mssqlserver" version="1.2.1" name="SqlSE" modelVersion="7.12.0-004">
+  <parameters key="driver">
+    <expression xsi:type="expression:Expression" name="com.microsoft.sqlserver.jdbc.SQLServerDriver" content="com.microsoft.sqlserver.jdbc.SQLServerDriver" returnTypeFixed="true"/>
+  </parameters>
+  <parameters key="url">
+    <expression xsi:type="expression:Expression" name="jdbc:sqlserver://localhost:1433;databaseName=DatosPrueba" content="jdbc:sqlserver://localhost:1433;databaseName=DatosPrueba" returnTypeFixed="true"/>
+  </parameters>
+  <parameters key="script">
+    <expression xsi:type="expression:Expression" name="SqlSE" content="def script =&quot;&quot;&#xD;&#xA;&#xD;&#xA;script = &quot;Select PLACA,MARCHAMO,TRASERA,CONTENEDOR,PARABRISAS from LECTURASISTEMASESPECIALES &quot;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
+  </parameters>
+  <parameters key="username">
+    <expression xsi:type="expression:Expression" name="bonitadev" content="bonitadev" returnTypeFixed="true"/>
+  </parameters>
+  <parameters key="password">
+    <expression xsi:type="expression:Expression" name="bpm" content="bpm" returnTypeFixed="true"/>
+  </parameters>
+  <parameters key="separator">
+    <expression xsi:type="expression:Expression" content="" returnTypeFixed="true"/>
+  </parameters>
+  <parameters key="outputType">
+    <expression xsi:type="expression:Expression" name="outputType" returnTypeFixed="true"/>
+  </parameters>
+</connectorconfiguration:ConnectorConfiguration>

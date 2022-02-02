@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connectorconfiguration:ConnectorConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:process="http://www.bonitasoft.org/ns/studio/process" definitionId="scripting-groovy-script" version="1.0.1" name="ScritptInsertAccion" modelVersion="7.12.0-004">
+  <parameters key="script">
+    <expression xsi:type="expression:Expression" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
+  </parameters>
+  <parameters key="variables"/>
+  <parameters key="fakeScriptExpression">
+    <expression xsi:type="expression:Expression" name="InsertAccionAP" content="import java.time.*&#xD;&#xA;import com.company.model.Accion&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;LocalDateTime t = LocalDateTime.now();&#xD;&#xA;&#xD;&#xA;List&lt;Accion> newAccionList = new ArrayList&lt;Accion>()&#xD;&#xA;&#xD;&#xA;Accion resProcesar = new Accion()&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;resProcesar.CODIGO_CASO =flujo.CODIGO_CASO&#xD;&#xA;resProcesar.CODIGO_FLUJO =flujo.persistenceId&#xD;&#xA;resProcesar.CODIGO_INSTITUCION= institucionvar.toString()&#xD;&#xA;resProcesar.ESTADO_ACCION= &quot;A&quot;&#xD;&#xA;resProcesar.ORIGEN_ACCION =&quot;N&quot;&#xD;&#xA;resProcesar.USUARIO_ADICION=flujo.USUARIO_ADICION&#xD;&#xA;resProcesar.CODIGO_AREA = &quot;2&quot;&#xD;&#xA;resProcesar.ACCION_OBSERVACION = &quot;SE CREO LA ACCION DE PARQUEO POR ERROR EN COMUNICACION CON DGA &quot; + excepcionMsg&#xD;&#xA;&#xD;&#xA;newAccionList.add(resProcesar)&#xD;&#xA;&#xD;&#xA;return newAccionList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true">
+      <referencedElements xsi:type="process:Data" name="institucionvar">
+        <dataType xsi:type="process:StringType" href="platform:/resource/ProyectoDGA/diagrams/SCG.ES.GT_NEW-5.0.proc#_URnug-h2Eeql7v9ARstdyQ"/>
+      </referencedElements>
+      <referencedElements xsi:type="process:BusinessObjectData" name="flujo" className="com.company.model.Flujo">
+        <dataType xsi:type="process:BusinessObjectType" href="platform:/resource/ProyectoDGA/diagrams/SCG.ES.GT_NEW-5.0.proc#_URnuhuh2Eeql7v9ARstdyQ"/>
+      </referencedElements>
+      <referencedElements xsi:type="process:Data" name="excepcionMsg">
+        <dataType xsi:type="process:StringType" href="platform:/resource/ProyectoDGA/diagrams/SCG.ES.GT_NEW-5.0.proc#_URnug-h2Eeql7v9ARstdyQ"/>
+      </referencedElements>
+    </expression>
+  </parameters>
+</connectorconfiguration:ConnectorConfiguration>

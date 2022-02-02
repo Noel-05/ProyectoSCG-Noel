@@ -1,0 +1,938 @@
+{
+  "modelVersion" : "2.2",
+  "previousArtifactVersion" : "1.11.46",
+  "id" : "EditarFronteraPage",
+  "name" : "EditarFronteraPage",
+  "lastUpdate" : 1643214735026,
+  "rows" : [
+    [
+      {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "repeatedCollection" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "8f525269-9407-4230-926a-74998e2a3836",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12
+              },
+              "propertyValues" : {
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "level" : {
+                  "type" : "constant",
+                  "value" : "Level 2"
+                },
+                "widgetId" : {
+                  "type" : "constant",
+                  "value" : "pbTitle"
+                },
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "readOnly" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "Frontera"
+                },
+                "label" : {
+                  "type" : "interpolation"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "center"
+                },
+                "dimension" : {
+                  "type" : "constant",
+                  "value" : 12
+                },
+                "class" : {
+                  "type" : "constant",
+                  "value" : "org.bonitasoft.web.designer.experimental.parametrizedWidget.TitleWidget"
+                }
+              },
+              "reference" : "fb44ec49-1a44-4751-b1b9-05ef23d6ad3e",
+              "hasValidationError" : false,
+              "id" : "pbTitle"
+            }
+          ],
+          [
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 2
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "58aeda99-0c51-43cf-82b1-63f882c8f425",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [ ]
+              ]
+            },
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 8
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Default label"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "<div class=\"alert alert-info\" translate><i class=\"\tglyphicon glyphicon-edit\" ></i>  A continuación puede modificar la información correspondientes a cada frontera. </div>"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "f908b345-5a38-412c-9d79-e5eb8dab927a",
+              "hasValidationError" : false,
+              "id" : "pbText"
+            },
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 2
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "961645f8-9d8f-49f0-b37b-93d60be47549",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [ ]
+              ]
+            }
+          ]
+        ]
+      }
+    ],
+    [
+      {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "repeatedCollection" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "90219841-8c1a-47cf-a668-c235f0571264",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [
+          [
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 2
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "33ad9e1a-e29d-4888-8c94-0542138f2ebd",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [ ]
+              ]
+            },
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 8
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "4eb7c382-9517-43c8-bf51-95adadf29648",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 4
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "disabled" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Tipo Frontera"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "placeholder" : {
+                        "type" : "interpolation",
+                        "value" : "Seleccione una opcion"
+                      },
+                      "availableValues" : {
+                        "type" : "expression",
+                        "value" : "tiposFrontera"
+                      },
+                      "displayedKey" : {
+                        "type" : "constant",
+                        "value" : "label"
+                      },
+                      "returnedKey" : {
+                        "type" : "constant",
+                        "value" : "id"
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "frontera.tipo_frontera"
+                      }
+                    },
+                    "reference" : "65d0fe69-664a-4adf-b390-87fd121130a1",
+                    "hasValidationError" : false,
+                    "id" : "pbSelect"
+                  },
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 4
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "disabled" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Estado"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "placeholder" : {
+                        "type" : "interpolation",
+                        "value" : "Seleccione una opcion"
+                      },
+                      "availableValues" : {
+                        "type" : "expression",
+                        "value" : "estados"
+                      },
+                      "displayedKey" : {
+                        "type" : "constant",
+                        "value" : "label"
+                      },
+                      "returnedKey" : {
+                        "type" : "constant",
+                        "value" : "id"
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "frontera.estado_registro"
+                      }
+                    },
+                    "reference" : "2383ab7b-38a1-4eaf-a05b-eb221444524d",
+                    "hasValidationError" : false,
+                    "id" : "pbSelect"
+                  },
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 4
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "minLength" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "maxLength" : {
+                        "type" : "constant",
+                        "value" : 100
+                      },
+                      "readOnly" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Capacidad"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "placeholder" : {
+                        "type" : "interpolation"
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "frontera.capacidad_mt"
+                      },
+                      "type" : {
+                        "type" : "constant",
+                        "value" : "number"
+                      },
+                      "min" : {
+                        "type" : "constant"
+                      },
+                      "max" : {
+                        "type" : "constant"
+                      },
+                      "step" : {
+                        "type" : "constant",
+                        "value" : 1
+                      }
+                    },
+                    "reference" : "ff254d7d-0488-441d-aaf1-7434b23463a3",
+                    "hasValidationError" : false,
+                    "id" : "pbInput"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "disabled" : {
+                        "type" : "expression",
+                        "value" : "frontera==null || frontera.persistenceId ==null"
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Editar Frontera"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "center"
+                      },
+                      "buttonStyle" : {
+                        "type" : "constant",
+                        "value" : "success"
+                      },
+                      "action" : {
+                        "type" : "constant",
+                        "value" : "POST"
+                      },
+                      "url" : {
+                        "type" : "interpolation",
+                        "value" : "{{urlStartEditarFrontera}}"
+                      },
+                      "dataToSend" : {
+                        "type" : "expression",
+                        "value" : "formOutput"
+                      },
+                      "dataFromSuccess" : {
+                        "type" : "variable",
+                        "value" : ""
+                      },
+                      "dataFromError" : {
+                        "type" : "variable",
+                        "value" : "formError"
+                      },
+                      "targetUrlOnSuccess" : {
+                        "type" : "interpolation",
+                        "value" : "/bonita/apps/aplicacionSCGjefe/jefefrontera/"
+                      },
+                      "collectionToModify" : {
+                        "type" : "variable"
+                      },
+                      "collectionPosition" : {
+                        "type" : "constant",
+                        "value" : "Last"
+                      },
+                      "valueToAdd" : {
+                        "type" : "constant"
+                      },
+                      "removeItem" : {
+                        "type" : "variable"
+                      },
+                      "displayIcon" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "buttonIcon" : {
+                        "type" : "interpolation",
+                        "value" : "floppy-disk"
+                      },
+                      "displayConfirm" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "confirmMessage" : {
+                        "type" : "interpolation",
+                        "value" : "¿Esta seguro de actualizar el registro ?"
+                      },
+                      "customStyle" : {
+                        "type" : "interpolation",
+                        "value" : "{ }"
+                      }
+                    },
+                    "reference" : "f693b2c5-2d38-401d-9d3e-6b7371490343",
+                    "hasValidationError" : false,
+                    "id" : "customWidgetButton"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "message" : {
+                        "type" : "variable",
+                        "value" : "formError"
+                      },
+                      "style" : {
+                        "type" : "constant",
+                        "value" : "alert-danger"
+                      },
+                      "isDismissible" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Error:"
+                      }
+                    },
+                    "reference" : "97766bcd-7cf5-44f2-9c17-3e225ba6f957",
+                    "hasValidationError" : false,
+                    "id" : "customAlert"
+                  }
+                ]
+              ]
+            },
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 2
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "f851048d-8de3-445d-afde-def05d7f8350",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [ ]
+              ]
+            }
+          ]
+        ]
+      }
+    ],
+    [
+      {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 2
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "repeatedCollection" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "4020e6fc-be34-4f24-8fa7-39bf8793812a",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [
+          [ ]
+        ]
+      },
+      {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 8
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "repeatedCollection" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "4071aad3-0206-4f11-8386-43b48fe93cb5",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Default label"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "<b>Seleccione un registro de la siguiente tabla para editar</b>"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "ba8fff22-1d36-45a8-a09b-24e4955a70c2",
+              "hasValidationError" : false,
+              "id" : "pbText"
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "headers" : {
+                  "type" : "constant",
+                  "value" : [
+                    "Codigo",
+                    "Nombre",
+                    "Tipo",
+                    "Estado",
+                    "Capacidad"
+                  ]
+                },
+                "content" : {
+                  "type" : "expression",
+                  "value" : "fronteraTable"
+                },
+                "columnsKey" : {
+                  "type" : "constant",
+                  "value" : [
+                    "codigo_frontera",
+                    "nombre_frontera",
+                    "tipo_frontera",
+                    "estado_registro",
+                    "capacidad_mt"
+                  ]
+                },
+                "selectedRow" : {
+                  "type" : "variable",
+                  "value" : "frontera"
+                },
+                "striped" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "condensed" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "bordered" : {
+                  "type" : "constant",
+                  "value" : true
+                }
+              },
+              "reference" : "1c50274d-7ecc-4e34-8711-72297aa998f0",
+              "hasValidationError" : false,
+              "id" : "pbTable"
+            }
+          ]
+        ]
+      },
+      {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 2
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "repeatedCollection" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "444ef2a5-bc20-46f1-a4e2-1c80040a685b",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [
+          [ ]
+        ]
+      }
+    ]
+  ],
+  "assets" : [
+    {
+      "id" : "0f152425-110e-42de-966b-44bdab8d1dc4",
+      "name" : "validationStyle.css",
+      "type" : "css",
+      "order" : 1,
+      "external" : false
+    },
+    {
+      "id" : "0124bd70-675e-4fcb-886a-76fcd5c04c9a",
+      "name" : "style.css",
+      "type" : "css",
+      "order" : 0,
+      "external" : false
+    }
+  ],
+  "inactiveAssets" : [ ],
+  "variables" : {
+    "formOutput" : {
+      "type" : "expression",
+      "value" : [
+        "if( $data.frontera ){",
+        "\treturn {",
+        "\t\t\"fronteraId\": $data.frontera.persistenceId !== undefined ? $data.frontera.persistenceId : null,",
+        "\t\t\"tipoFrontera\": $data.frontera.tipo_frontera !== undefined ? $data.frontera.tipo_frontera : null,",
+        "\t\t\"estado\": $data.frontera.estado_registro !== undefined ? $data.frontera.estado_registro : null,",
+        "\t    \"capacidad\": $data.frontera.capacidad_mt !== undefined ? $data.frontera.capacidad_mt : null",
+        "\t}",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "fronteraTable" : {
+      "type" : "businessdata",
+      "value" : [
+        "{\"displayValue\":\"find [com.company.model.Frontera]\",\"businessObjectName\":\"Frontera\",\"query\":{\"name\":\"find\",\"displayName\":\"find\"},\"id\":\"com.company.model.Frontera\",\"filters\":[],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
+      ],
+      "exposed" : false
+    },
+    "frontera" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.frontera_ref.link}}"
+      ],
+      "exposed" : false
+    },
+    "formError" : {
+      "type" : "constant",
+      "exposed" : false
+    },
+    "estados" : {
+      "type" : "json",
+      "value" : [
+        "[",
+        "    {",
+        "    \"id\":\"A\",",
+        "    \"label\":\"ACTIVA\"",
+        "    },",
+        "    {",
+        "    \"id\":\"I\",",
+        "    \"label\":\"INACTIVA\"",
+        "    }",
+        "]"
+      ],
+      "exposed" : false
+    },
+    "tiposFrontera" : {
+      "type" : "json",
+      "value" : [
+        "[",
+        "    {",
+        "    \"id\":\"1\",",
+        "    \"label\":\"TERRESTRE\"",
+        "    },",
+        "    {",
+        "    \"id\":\"2\",",
+        "    \"label\":\"AEREA\"",
+        "    },",
+        "    {",
+        "    \"id\":\"3\",",
+        "    \"label\":\"MARITIMA\"",
+        "    },",
+        "     {",
+        "    \"id\":\"4\",",
+        "    \"label\":\"ZONA FRANCA\"",
+        "    }",
+        "]"
+      ],
+      "exposed" : false
+    },
+    "startEditarFrontera" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/process?s=EditarFrontera &p=0&c=1&o=version%20DESC&f=activationState=ENABLED"
+      ],
+      "exposed" : false
+    },
+    "urlStartEditarFrontera" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.startEditarFrontera  && $data.startEditarFrontera.length > 0) {\r",
+        "    var url =\"../API/bpm/process/\"+\r",
+        "    $data.startEditarFrontera[0].id+\"/instantiation\";\r",
+        "    return url;\r",
+        "} else {\r",
+        "  return null;\r",
+        "}"
+      ],
+      "exposed" : false
+    }
+  },
+  "hasValidationError" : false,
+  "uuid" : "c1e639ba-f960-4197-82cb-f8ce8e5c7618",
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer"
+}

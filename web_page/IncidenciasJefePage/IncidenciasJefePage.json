@@ -1,0 +1,1752 @@
+{
+  "modelVersion" : "2.2",
+  "previousArtifactVersion" : "1.11.52",
+  "id" : "IncidenciasJefePage",
+  "name" : "IncidenciasJefePage",
+  "lastUpdate" : 1643214735464,
+  "rows" : [
+    [
+      {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 1
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "repeatedCollection" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "0afaed38-0227-41b8-8320-be31f9de33d7",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [
+          [ ]
+        ]
+      },
+      {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 10
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "repeatedCollection" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "2f97e37c-a220-43b1-ab68-d52078c339ea",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "Incidencias"
+                },
+                "level" : {
+                  "type" : "constant",
+                  "value" : "Level 2"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "center"
+                }
+              },
+              "reference" : "055b8b96-ee7d-453f-8006-8aa18f3213a8",
+              "hasValidationError" : false,
+              "id" : "pbTitle"
+            }
+          ],
+          [
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "0bd59adb-b216-4ec1-85c9-933158628054",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Default label"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "allowHTML" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "text" : {
+                        "type" : "interpolation",
+                        "value" : "<div class=\"alert alert-info\" translate><i class=\"\tglyphicon glyphicon-ok\" ></i>A continuacion, ingrese la Placa del flujo para mostrar las incidencias</div>"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      }
+                    },
+                    "reference" : "49f9823d-95a6-4d5b-a058-08bd36219fad",
+                    "hasValidationError" : false,
+                    "id" : "pbText"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "minLength" : {
+                        "type" : "constant",
+                        "value" : 2
+                      },
+                      "maxLength" : {
+                        "type" : "constant",
+                        "value" : 17
+                      },
+                      "readOnly" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Placa"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "placeholder" : {
+                        "type" : "interpolation"
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "Placa"
+                      },
+                      "type" : {
+                        "type" : "constant",
+                        "value" : "text"
+                      },
+                      "min" : {
+                        "type" : "constant"
+                      },
+                      "max" : {
+                        "type" : "constant"
+                      },
+                      "step" : {
+                        "type" : "constant",
+                        "value" : 1
+                      }
+                    },
+                    "reference" : "1c0a31f7-e3a7-46e6-a83b-16df4bc94605",
+                    "hasValidationError" : false,
+                    "id" : "pbInput"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "!flujoNoValido"
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Default label"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "allowHTML" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "text" : {
+                        "type" : "interpolation",
+                        "value" : "<div class=\"alert alert-danger\" translate><i class=\"\tglyphicon glyphicon-remove\" ></i> El numero de placa {{Placa}} no valido, no registrado en el SCG.</div>"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      }
+                    },
+                    "reference" : "7ceabc20-cd1c-445b-849b-8760e134acb1",
+                    "hasValidationError" : false,
+                    "id" : "pbText"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "flujoNoValido"
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Default label"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "allowHTML" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "text" : {
+                        "type" : "interpolation",
+                        "value" : "<div class=\"alert alert-success\" translate><i class=\"\tglyphicon glyphicon-ok\" ></i> Confirme el flujo al que desea seleccionar una incidencia.</div>"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      }
+                    },
+                    "reference" : "617a918f-aa3d-462f-a457-d1ce09150ef2",
+                    "hasValidationError" : false,
+                    "id" : "pbText"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "flujoNoValido"
+                      },
+                      "allowHTML" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "headers" : {
+                        "type" : "constant",
+                        "value" : [
+                          "id",
+                          "Placa",
+                          "Estado",
+                          "Fecha Inicio",
+                          "Observación"
+                        ]
+                      },
+                      "content" : {
+                        "type" : "expression",
+                        "value" : "flujo"
+                      },
+                      "columnsKey" : {
+                        "type" : "constant",
+                        "value" : [
+                          "persistenceId",
+                          "placa",
+                          "estado_flujo",
+                          "fecha_inicio | uiDate:'dd/MM/yyyy'",
+                          "observacion_flujo"
+                        ]
+                      },
+                      "selectedRow" : {
+                        "type" : "variable",
+                        "value" : "Selected"
+                      },
+                      "striped" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "condensed" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "bordered" : {
+                        "type" : "constant",
+                        "value" : true
+                      }
+                    },
+                    "reference" : "ec58d550-08ff-4cf9-a162-20ce0c1fb2c4",
+                    "hasValidationError" : false,
+                    "id" : "pbTable"
+                  }
+                ]
+              ]
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Default label"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "{{tipoIncidencia}}"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "351490b9-4bb2-444a-9324-cd501c493d0f",
+              "hasValidationError" : false,
+              "id" : "pbText"
+            }
+          ],
+          [
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "flujoNoValido || !Selected"
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "cf46d0f3-f1ff-42e4-9d63-27dd5a797896",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "disabled" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Incidencia"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "placeholder" : {
+                        "type" : "interpolation",
+                        "value" : "Seleccionar Incidencia"
+                      },
+                      "availableValues" : {
+                        "type" : "expression",
+                        "value" : "tiposIncidencias"
+                      },
+                      "displayedKey" : {
+                        "type" : "constant",
+                        "value" : "nombre_tipo_incidente"
+                      },
+                      "returnedKey" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "tipoIncidencia"
+                      }
+                    },
+                    "reference" : "76912048-2a9f-433f-95ba-471924677916",
+                    "hasValidationError" : false,
+                    "id" : "pbSelect"
+                  },
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "tipoIncidencia.codigo_tipo_incidente==null"
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Proceso"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "allowHTML" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "text" : {
+                        "type" : "interpolation",
+                        "value" : "{{procesoByFlujo.codigo_proceso}} - {{procesoByFlujo.nombre_proceso}}"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      }
+                    },
+                    "reference" : "1aeaa307-6e49-42ca-9e9a-85bd875c7b88",
+                    "hasValidationError" : false,
+                    "id" : "pbText"
+                  }
+                ]
+              ]
+            }
+          ],
+          [
+            {
+              "type" : "container",
+              "dimension" : {
+                "xs" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "flujoNoValido || tipoIncidencia.codigo_tipo_incidente ==null"
+                },
+                "repeatedCollection" : {
+                  "type" : "variable",
+                  "value" : ""
+                }
+              },
+              "reference" : "0aad02a8-03a1-4651-8342-bd9138fade43",
+              "hasValidationError" : false,
+              "id" : "pbContainer",
+              "rows" : [
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "tipoIncidencia.codigo_tipo_incidente=='01'"
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "minLength" : {
+                        "type" : "constant",
+                        "value" : 0
+                      },
+                      "maxLength" : {
+                        "type" : "constant",
+                        "value" : 17
+                      },
+                      "readOnly" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Placa"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "placeholder" : {
+                        "type" : "interpolation"
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "Selected.placa"
+                      },
+                      "type" : {
+                        "type" : "constant",
+                        "value" : "text"
+                      },
+                      "min" : {
+                        "type" : "constant"
+                      },
+                      "max" : {
+                        "type" : "constant"
+                      },
+                      "step" : {
+                        "type" : "constant",
+                        "value" : 1
+                      }
+                    },
+                    "reference" : "62e22452-c63e-4411-ae4d-c20fc2107e4f",
+                    "hasValidationError" : false,
+                    "id" : "pbInput"
+                  },
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "tipoIncidencia.codigo_tipo_incidente=='01'"
+                      },
+                      "disabled" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Placa Pais"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "placeholder" : {
+                        "type" : "interpolation",
+                        "value" : "Seleccione una opcion"
+                      },
+                      "availableValues" : {
+                        "type" : "expression",
+                        "value" : "placaPais"
+                      },
+                      "displayedKey" : {
+                        "type" : "constant",
+                        "value" : "nombre_pais"
+                      },
+                      "returnedKey" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "placapaisByFlujo"
+                      }
+                    },
+                    "reference" : "d1ef0794-b55f-4604-bf42-d1ff2d2976a5",
+                    "hasValidationError" : false,
+                    "id" : "pbSelect"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "ipoIncidencia.codigo_tipo_incidente=='01'"
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Default label"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "allowHTML" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "text" : {
+                        "type" : "interpolation",
+                        "value" : "<div class=\"alert  alert-warning\">\n<i class=\"\tglyphicon glyphicon-alert\" ></i>  \nLa placa {{Selected.placa}} ingresada debe ser distinta a la placa actual.\n</div>"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      }
+                    },
+                    "reference" : "74f3be20-6e36-4874-9861-f2f60dcac32e",
+                    "hasValidationError" : false,
+                    "id" : "pbText"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "tipoIncidencia.codigo_tipo_incidente=='02'"
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "minLength" : {
+                        "type" : "constant",
+                        "value" : 2
+                      },
+                      "maxLength" : {
+                        "type" : "constant",
+                        "value" : 100
+                      },
+                      "readOnly" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Nombre Motorista"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "placeholder" : {
+                        "type" : "interpolation"
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "Selected.nombres_motorista"
+                      },
+                      "type" : {
+                        "type" : "constant",
+                        "value" : "text"
+                      },
+                      "min" : {
+                        "type" : "constant"
+                      },
+                      "max" : {
+                        "type" : "constant"
+                      },
+                      "step" : {
+                        "type" : "constant",
+                        "value" : 1
+                      }
+                    },
+                    "reference" : "11bcafb4-ab7f-4ea3-828c-96832bfa45d6",
+                    "hasValidationError" : false,
+                    "id" : "pbInput"
+                  },
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "tipoIncidencia.codigo_tipo_incidente=='02'"
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "minLength" : {
+                        "type" : "constant",
+                        "value" : 2
+                      },
+                      "maxLength" : {
+                        "type" : "constant",
+                        "value" : 100
+                      },
+                      "readOnly" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Apellido Motorista"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "placeholder" : {
+                        "type" : "interpolation"
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "Selected.apellidos_motorista"
+                      },
+                      "type" : {
+                        "type" : "constant",
+                        "value" : "text"
+                      },
+                      "min" : {
+                        "type" : "constant"
+                      },
+                      "max" : {
+                        "type" : "constant"
+                      },
+                      "step" : {
+                        "type" : "constant",
+                        "value" : 1
+                      }
+                    },
+                    "reference" : "45f29f18-44ab-4032-ab12-ee9b46597e8c",
+                    "hasValidationError" : false,
+                    "id" : "pbInput"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "tipoIncidencia.codigo_tipo_incidente=='02'"
+                      },
+                      "readOnly" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Fecha Nacimiento Motorista"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "fechanac"
+                      },
+                      "dateFormat" : {
+                        "type" : "constant",
+                        "value" : "dd/MM/yyyy"
+                      },
+                      "placeholder" : {
+                        "type" : "interpolation",
+                        "value" : "Fecha Nacimiento (dd/MM/yyyy)"
+                      },
+                      "showToday" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "todayLabel" : {
+                        "type" : "interpolation",
+                        "value" : "Today"
+                      }
+                    },
+                    "reference" : "33ef4283-d8ae-43d8-b487-33a4a3d8774a",
+                    "hasValidationError" : false,
+                    "id" : "pbDatePicker"
+                  },
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "tipoIncidencia.codigo_tipo_incidente=='02'"
+                      },
+                      "disabled" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Pais Documento"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "placeholder" : {
+                        "type" : "interpolation",
+                        "value" : "Seleccione una opcion"
+                      },
+                      "availableValues" : {
+                        "type" : "expression",
+                        "value" : "paisDocumento"
+                      },
+                      "displayedKey" : {
+                        "type" : "constant",
+                        "value" : "nombre_pais"
+                      },
+                      "returnedKey" : {
+                        "type" : "constant"
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "varPaisDoc"
+                      }
+                    },
+                    "reference" : "e2d40dca-6732-4f0e-a0bc-6ba57a8211d7",
+                    "hasValidationError" : false,
+                    "id" : "pbSelect"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "tipoIncidencia.codigo_tipo_incidente=='02'"
+                      },
+                      "disabled" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Tipo Documento"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "placeholder" : {
+                        "type" : "interpolation",
+                        "value" : "Seleccione una opcion"
+                      },
+                      "availableValues" : {
+                        "type" : "expression",
+                        "value" : "tipoDocumento1"
+                      },
+                      "displayedKey" : {
+                        "type" : "constant",
+                        "value" : "nombre_documento"
+                      },
+                      "returnedKey" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "vartipodoc"
+                      }
+                    },
+                    "reference" : "08392a90-82c4-4741-b7cb-85ae3a4cb442",
+                    "hasValidationError" : false,
+                    "id" : "pbSelect"
+                  },
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "tipoIncidencia.codigo_tipo_incidente=='02'"
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "minLength" : {
+                        "type" : "constant",
+                        "value" : 5
+                      },
+                      "maxLength" : {
+                        "type" : "constant",
+                        "value" : 100
+                      },
+                      "readOnly" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Documento Motorista"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "placeholder" : {
+                        "type" : "interpolation"
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "Selected.no_doc_motorista"
+                      },
+                      "type" : {
+                        "type" : "constant",
+                        "value" : "text"
+                      },
+                      "min" : {
+                        "type" : "constant"
+                      },
+                      "max" : {
+                        "type" : "constant"
+                      },
+                      "step" : {
+                        "type" : "constant",
+                        "value" : 1
+                      }
+                    },
+                    "reference" : "786156c4-461b-4d6c-a81a-e221353cbe79",
+                    "hasValidationError" : false,
+                    "id" : "pbInput"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "readOnly" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "required" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "minLength" : {
+                        "type" : "constant",
+                        "value" : 5
+                      },
+                      "maxLength" : {
+                        "type" : "constant",
+                        "value" : 100
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Descripción de Incidente"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "value" : {
+                        "type" : "variable",
+                        "value" : "descripcionIncidencia"
+                      }
+                    },
+                    "reference" : "02ecbfdf-68a6-4e61-ac58-bc2a3d048001",
+                    "hasValidationError" : false,
+                    "id" : "pbTextarea"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : "alert alert-danger col-lg-6 col-lg-offset-3"
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "!formOutput._submitError.message"
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Default label"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "allowHTML" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "text" : {
+                        "type" : "interpolation",
+                        "value" : "<strong>Mensaje Error</strong>\n<br/>\n{{formOutput._submitError.message}}\n{{submit_errors_list}}"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      }
+                    },
+                    "reference" : "3429ccc1-0c47-4805-8486-5622143cf6b7",
+                    "hasValidationError" : false,
+                    "id" : "pbText"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "labelHidden" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Default label"
+                      },
+                      "labelPosition" : {
+                        "type" : "constant",
+                        "value" : "top"
+                      },
+                      "labelWidth" : {
+                        "type" : "constant",
+                        "value" : 4
+                      },
+                      "allowHTML" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "text" : {
+                        "type" : "interpolation",
+                        "value" : "{{formOutput._submitError}}"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      }
+                    },
+                    "reference" : "002f459f-1f57-40aa-b195-5e0d7d6331a8",
+                    "hasValidationError" : false,
+                    "id" : "pbText"
+                  }
+                ],
+                [
+                  {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "hidden" : {
+                        "type" : "expression",
+                        "value" : "flujoNoValido || tipoIncidencia.codigo_tipo_incidente==null"
+                      },
+                      "disabled" : {
+                        "type" : "expression",
+                        "value" : "$form.$invalid || (tipoIncidencia.codigo_tipo_incidente=='01' && !fechaMayorEdad)"
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "Agregar Incidencia"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "center"
+                      },
+                      "buttonStyle" : {
+                        "type" : "constant",
+                        "value" : "primary"
+                      },
+                      "action" : {
+                        "type" : "constant",
+                        "value" : "POST"
+                      },
+                      "url" : {
+                        "type" : "interpolation",
+                        "value" : "{{urlStarEditarArea}}"
+                      },
+                      "dataToSend" : {
+                        "type" : "expression",
+                        "value" : "formOutput"
+                      },
+                      "dataFromSuccess" : {
+                        "type" : "variable",
+                        "value" : "answer"
+                      },
+                      "dataFromError" : {
+                        "type" : "variable",
+                        "value" : "formOutput._submitError"
+                      },
+                      "targetUrlOnSuccess" : {
+                        "type" : "interpolation",
+                        "value" : "/bonita/apps/aplicacionSCGjefe/jefeincidencias/"
+                      },
+                      "collectionToModify" : {
+                        "type" : "variable"
+                      },
+                      "collectionPosition" : {
+                        "type" : "constant",
+                        "value" : "Last"
+                      },
+                      "valueToAdd" : {
+                        "type" : "constant"
+                      },
+                      "removeItem" : {
+                        "type" : "variable"
+                      },
+                      "displayIcon" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "buttonIcon" : {
+                        "type" : "interpolation",
+                        "value" : "floppy-disk"
+                      },
+                      "displayConfirm" : {
+                        "type" : "constant",
+                        "value" : true
+                      },
+                      "confirmMessage" : {
+                        "type" : "interpolation",
+                        "value" : "¿Esta seguro de agregar la incidencia?"
+                      },
+                      "customStyle" : {
+                        "type" : "interpolation",
+                        "value" : "{ }"
+                      }
+                    },
+                    "reference" : "b943d732-dff9-4e9b-a9ec-b82a74e8112b",
+                    "hasValidationError" : false,
+                    "id" : "customWidgetButton"
+                  }
+                ]
+              ]
+            }
+          ]
+        ]
+      }
+    ]
+  ],
+  "assets" : [
+    {
+      "id" : "f90d0d52-7d01-4094-8ffb-fb3f2b649d11",
+      "name" : "style.css",
+      "type" : "css",
+      "order" : 0,
+      "external" : false
+    },
+    {
+      "id" : "8052b581-5bd4-450e-b2dd-5df4a83f5b2c",
+      "name" : "validationStyle.css",
+      "type" : "css",
+      "order" : 1,
+      "external" : false
+    }
+  ],
+  "inactiveAssets" : [ ],
+  "variables" : {
+    "currentUser" : {
+      "type" : "url",
+      "value" : [
+        "../API/system/session/1"
+      ],
+      "exposed" : false
+    },
+    "flujo" : {
+      "type" : "businessdata",
+      "value" : [
+        "{\"displayValue\":\"qrFlujoPlacaActivo [com.company.model.Flujo]\",\"businessObjectName\":\"undefined\",\"query\":{\"name\":\"qrFlujoPlacaActivo\",\"displayName\":\"qrFlujoPlacaActivo\"},\"id\":\"com.company.model.Flujo\",\"filters\":[{\"name\":\"PLACA\",\"type\":\"STRING\",\"collection\":false,\"value\":\"{{Placa}}\"},{\"name\":\"ESTADO_FLUJO\",\"type\":\"STRING\",\"collection\":false,\"value\":\"I\"}],\"pagination\":{\"p\":\"0\",\"c\":\"1\"}}"
+      ],
+      "exposed" : false
+    },
+    "Selected" : {
+      "type" : "constant",
+      "exposed" : false
+    },
+    "Placa" : {
+      "type" : "constant",
+      "exposed" : false
+    },
+    "idIncidencia" : {
+      "type" : "constant",
+      "exposed" : false
+    },
+    "procesoByFlujo" : {
+      "type" : "url",
+      "value" : [
+        "{{Selected|lazyRef:'id_proceso'}}"
+      ],
+      "exposed" : false
+    },
+    "placapaisByFlujo" : {
+      "type" : "url",
+      "value" : [
+        "{{Selected|lazyRef:'placa_pais'}}"
+      ],
+      "exposed" : false
+    },
+    "paisdocumentoByFlujo" : {
+      "type" : "url",
+      "value" : [
+        "{{flujo[0]|lazyRef:'pais_documento'}}"
+      ],
+      "exposed" : false
+    },
+    "paisDocumento" : {
+      "type" : "businessdata",
+      "value" : [
+        "{\"displayValue\":\"find [com.company.model.Pais]\",\"businessObjectName\":\"Pais\",\"query\":{\"name\":\"find\",\"displayName\":\"find\"},\"id\":\"com.company.model.Pais\",\"filters\":[],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
+      ],
+      "exposed" : false
+    },
+    "placaPais" : {
+      "type" : "businessdata",
+      "value" : [
+        "{\"displayValue\":\"find [com.company.model.Pais]\",\"businessObjectName\":\"Pais\",\"query\":{\"name\":\"find\",\"displayName\":\"find\"},\"id\":\"com.company.model.Pais\",\"filters\":[],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
+      ],
+      "exposed" : false
+    },
+    "tipoDocumento1" : {
+      "type" : "businessdata",
+      "value" : [
+        "{\"displayValue\":\"find [com.company.model.TipoDocViaje]\",\"businessObjectName\":\"TipoDocViaje\",\"query\":{\"name\":\"find\",\"displayName\":\"find\"},\"id\":\"com.company.model.TipoDocViaje\",\"filters\":[],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
+      ],
+      "exposed" : false
+    },
+    "tipoDocumento" : {
+      "type" : "json",
+      "value" : [
+        "[",
+        "    {",
+        "        \"id\":\"0\",",
+        "        \"label\":\"NO DEFINIDO\"",
+        "    },",
+        "    {",
+        "        \"id\":\"1\",",
+        "        \"label\":\"PASAPORTE\"",
+        "    },",
+        "    {",
+        "        \"id\":\"2\",",
+        "        \"label\":\"DOCUMENTO DE IDENTIDAD DEL PAIS\"",
+        "    },",
+        "    {",
+        "        \"id\":\"3\",",
+        "        \"label\":\"OTRO\"",
+        "    }",
+        "]"
+      ],
+      "exposed" : false
+    },
+    "formOutput" : {
+      "type" : "expression",
+      "value" : [
+        "",
+        "",
+        "    return {",
+        "      ",
+        "        placa: $data.Selected.placa !== undefined ? $data.Selected.placa : null,",
+        "       placa_pais: ($data.placapaisByFlujo !==null && $data.placapaisByFlujo.persistenceId_string !== undefined) ? $data.placapaisByFlujo.persistenceId_string : null,",
+        "\t\ttipo_documento: $data.vartipodoc.persistenceId_string !== undefined ? $data.vartipodoc.persistenceId_string  : null,",
+        "\t\tno_doc_motorista: $data.Selected.no_doc_motorista !== undefined ? $data.flujo[0].no_doc_motorista : null,",
+        "\t    pais_documento: $data.varPaisDoc.persistenceId_string !== undefined ? $data.vartipodoc.persistenceId_string  : null,",
+        "\t   nombres_motorista: $data.Selected.nombres_motorista !== undefined ? $data.flujo[0].nombres_motorista : null,",
+        "\t   apellidos_motorista: $data.Selected.apellidos_motorista !== undefined ? $data.flujo[0].apellidos_motorista : null,",
+        "\t    fecha_nac_motorista: $data.fechanac !== undefined ? $data.fechanac : null,",
+        "\t   usuario_modificacion: $data.currentUser.user_id !== undefined ? $data.currentUser.user_id : null,",
+        "\t   id_flujo: $data.Selected.persistenceId_string !== undefined ? $data.flujo[0].persistenceId_string : null,",
+        "\t   id_tipo_incidente: $data.tipoIncidencia.persistenceId_string !== undefined ? $data.tipoIncidencia.persistenceId_string : null,",
+        "\t   descripcion_incidente: $data.descripcionIncidencia !== undefined ? $data.descripcionIncidencia : null,",
+        "\t   usuario_adicion: $data.currentUser.user_id !== undefined ? $data.currentUser.user_id : null,",
+        "\t   codigo_tipo_incidente: $data.tipoIncidencia.codigo_tipo_incidente !== undefined ? $data.tipoIncidencia.codigo_tipo_incidente : null",
+        "\t}"
+      ],
+      "exposed" : false
+    },
+    "placaNoValida" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.Placa===undefined || $data.Placa===null){",
+        "    return true;",
+        "}",
+        "//if($data.flujo===undefined || $data.flujo.length===0){",
+        "//    return true;",
+        "//}",
+        "if($data.Selected.placa===undefined || $data.Selected.placa===null){",
+        "    return true;",
+        "}",
+        "return ($data.Selected.placa==$data.Placa);"
+      ],
+      "exposed" : false
+    },
+    "tiposIncidencias" : {
+      "type" : "businessdata",
+      "value" : [
+        "{\"displayValue\":\"find [com.company.model.TipoIncidente]\",\"businessObjectName\":\"TipoIncidente\",\"query\":{\"name\":\"find\",\"displayName\":\"find\"},\"id\":\"com.company.model.TipoIncidente\",\"filters\":[],\"pagination\":{\"p\":\"0\",\"c\":\"10\"}}"
+      ],
+      "exposed" : false
+    },
+    "tipoIncidencia" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.tipoIncidencia_ref.link}}"
+      ],
+      "exposed" : false
+    },
+    "descripcionIncidencia" : {
+      "type" : "constant",
+      "value" : [
+        ""
+      ],
+      "exposed" : false
+    },
+    "procesoSCG002" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/process?s=SCG002&p=0&c=1&o=version%20DESC&f=activationState=ENABLED"
+      ],
+      "exposed" : false
+    },
+    "answer" : {
+      "type" : "constant",
+      "exposed" : false
+    },
+    "submit_errors_list" : {
+      "type" : "expression",
+      "value" : [
+        "if($data.formOutput && $data.formOutput._submitError && $data.formOutput._submitError.explanations){",
+        "\tconst liElements = $data.formOutput._submitError.explanations",
+        "\t\t.filter(cause => cause !== null)",
+        "\t\t.map(cause => \"<li>\" + cause + \"</li>\")",
+        "\t\t.join('');",
+        "\tif(liElements){",
+        "\t\treturn \"<ul>\" + liElements + \"</ul>\";",
+        "\t}",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "procesoId" : {
+      "type" : "expression",
+      "value" : [
+        "return $data.procesoSCG002[0].id;"
+      ],
+      "exposed" : false
+    },
+    "flujoNoValido" : {
+      "type" : "expression",
+      "value" : [
+        "return $data.Placa!==undefined && $data.Placa!==null && ($data.flujo===undefined || $data.flujo.length===0);"
+      ],
+      "exposed" : false
+    },
+    "fechaMayorEdad" : {
+      "type" : "expression",
+      "value" : [
+        "var fActual=new Date();",
+        "fActual.setFullYear(fActual.getFullYear() - 18);",
+        "var fNacimiento=($data.fechanac===undefined || $data.fechanac===null)?new Date():$data.fechanac;",
+        "var dif=(fActual - fNacimiento);",
+        "console.log(dif);",
+        "return (dif>0);"
+      ],
+      "exposed" : false
+    },
+    "urlStarEditarArea" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.starEditarArea  && $data.starEditarArea.length > 0) {\r",
+        "    var url =\"../API/bpm/process/\"+\r",
+        "    $data.starEditarArea[0].id+\"/instantiation\";\r",
+        "    return url;\r",
+        "} else {\r",
+        "  return null;\r",
+        "}"
+      ],
+      "exposed" : false
+    },
+    "starEditarArea" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/process?s=Incidencia &p=0&c=1&o=version%20DESC&f=activationState=ENABLED"
+      ],
+      "exposed" : false
+    },
+    "vartipodoc" : {
+      "type" : "constant",
+      "value" : [
+        "null"
+      ],
+      "exposed" : false
+    },
+    "varPaisDoc" : {
+      "type" : "constant",
+      "value" : [
+        "null"
+      ],
+      "exposed" : false
+    },
+    "fechanac" : {
+      "type" : "constant",
+      "value" : [
+        "null"
+      ],
+      "exposed" : false
+    },
+    "Nombres" : {
+      "type" : "constant",
+      "value" : [
+        "null"
+      ],
+      "exposed" : false
+    },
+    "Apellidos" : {
+      "type" : "constant",
+      "value" : [
+        "null"
+      ],
+      "exposed" : false
+    }
+  },
+  "hasValidationError" : false,
+  "uuid" : "bae3d30f-2631-4b89-b113-6b52a0bd161d",
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer"
+}

@@ -1,0 +1,235 @@
+{
+  "modelVersion" : "2.2",
+  "previousArtifactVersion" : "1.10.12",
+  "properties" : [
+    {
+      "label" : "Disabled",
+      "name" : "disabled",
+      "type" : "boolean",
+      "defaultValue" : false,
+      "bond" : "expression"
+    },
+    {
+      "label" : "Label",
+      "name" : "label",
+      "type" : "text",
+      "defaultValue" : "Submit",
+      "bond" : "interpolation"
+    },
+    {
+      "label" : "Alignment",
+      "name" : "alignment",
+      "type" : "choice",
+      "defaultValue" : "left",
+      "choiceValues" : [
+        "left",
+        "center",
+        "right"
+      ],
+      "bond" : "constant"
+    },
+    {
+      "label" : "Style",
+      "name" : "buttonStyle",
+      "type" : "choice",
+      "defaultValue" : "default",
+      "choiceValues" : [
+        "default",
+        "primary",
+        "success",
+        "info",
+        "warning",
+        "danger",
+        "link"
+      ],
+      "bond" : "constant"
+    },
+    {
+      "label" : "Action",
+      "name" : "action",
+      "type" : "choice",
+      "defaultValue" : "Submit task",
+      "choiceValues" : [
+        {
+          "value" : "Submit task",
+          "label" : "Submit task",
+          "group" : "Bonita BPM"
+        },
+        {
+          "value" : "Start process",
+          "label" : "Start process",
+          "group" : "Bonita BPM"
+        },
+        {
+          "value" : "POST",
+          "label" : "POST",
+          "group" : "HTTP request"
+        },
+        {
+          "value" : "PUT",
+          "label" : "PUT",
+          "group" : "HTTP request"
+        },
+        {
+          "value" : "GET",
+          "label" : "GET",
+          "group" : "HTTP request"
+        },
+        {
+          "value" : "DELETE",
+          "label" : "DELETE",
+          "group" : "HTTP request"
+        },
+        {
+          "value" : "Add to collection",
+          "label" : "Add to collection",
+          "group" : "Collection"
+        },
+        {
+          "value" : "Remove from collection",
+          "label" : "Remove from collection",
+          "group" : "Collection"
+        }
+      ],
+      "bond" : "constant"
+    },
+    {
+      "label" : "URL to call",
+      "name" : "url",
+      "caption" : "Send data to this URL when the button is clicked",
+      "help" : "URL used to perform the HTTP request when this button is clicked.",
+      "showFor" : "['POST', 'PUT', 'GET', 'DELETE'].indexOf(properties.action.value) > -1",
+      "type" : "text",
+      "bond" : "interpolation"
+    },
+    {
+      "label" : "Data sent on click",
+      "name" : "dataToSend",
+      "help" : "Can be used to fulfill a contract",
+      "showFor" : "properties.action.value === 'POST' || properties.action.value === 'PUT' || properties.action.value === 'Submit task' || properties.action.value ===  'Start process'",
+      "type" : "text",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Successful response value",
+      "name" : "dataFromSuccess",
+      "help" : "Holds the response when the request is successful",
+      "showFor" : "['POST', 'PUT', 'GET', 'DELETE', 'Submit task', 'Start process'].indexOf(properties.action.value) > -1",
+      "type" : "text",
+      "bond" : "variable"
+    },
+    {
+      "label" : "Failed response value",
+      "name" : "dataFromError",
+      "help" : "Holds the response when the request has failed",
+      "showFor" : "['POST', 'PUT', 'GET', 'DELETE', 'Submit task', 'Start process'].indexOf(properties.action.value) > -1",
+      "type" : "text",
+      "bond" : "variable"
+    },
+    {
+      "label" : "Target URL on success",
+      "name" : "targetUrlOnSuccess",
+      "help" : "Next page to display, for applications. In the Portal, it is ignored as navigation is managed automatically",
+      "showFor" : "['POST', 'PUT', 'DELETE', 'Submit task', 'Start process'].indexOf(properties.action.value) > -1",
+      "type" : "text",
+      "bond" : "interpolation"
+    },
+    {
+      "label" : "Collection",
+      "name" : "collectionToModify",
+      "caption" : "Variable of type array",
+      "help" : "Use $collection to act on the collection of a repeated content",
+      "showFor" : "properties.action.value === 'Remove from collection' || properties.action.value === 'Add to collection'",
+      "type" : "collection",
+      "bond" : "variable"
+    },
+    {
+      "label" : "Add",
+      "name" : "collectionPosition",
+      "showFor" : "properties.action.value === 'Add to collection'",
+      "type" : "choice",
+      "defaultValue" : "Last",
+      "choiceValues" : [
+        "First",
+        "Last"
+      ],
+      "bond" : "constant"
+    },
+    {
+      "label" : "Value to add",
+      "name" : "valueToAdd",
+      "showFor" : "properties.action.value === 'Add to collection'",
+      "type" : "text",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Remove",
+      "name" : "collectionPosition",
+      "showFor" : "properties.action.value === 'Remove from collection'",
+      "type" : "choice",
+      "defaultValue" : "Last",
+      "choiceValues" : [
+        "First",
+        "Item",
+        "Last"
+      ],
+      "bond" : "constant"
+    },
+    {
+      "label" : "Item to remove",
+      "name" : "removeItem",
+      "help" : "Use $item to remove the current item in a repeated collection",
+      "showFor" : "properties.action.value === 'Remove from collection' && properties.collectionPosition.value === 'Item'",
+      "type" : "text",
+      "bond" : "variable"
+    },
+    {
+      "label" : "Display Icon",
+      "name" : "displayIcon",
+      "type" : "boolean",
+      "defaultValue" : false,
+      "bond" : "constant"
+    },
+    {
+      "label" : "Icon class",
+      "name" : "buttonIcon",
+      "showFor" : "properties.displayIcon.value",
+      "type" : "text",
+      "defaultValue" : "ok",
+      "bond" : "interpolation"
+    },
+    {
+      "label" : "Display confirmation message",
+      "name" : "displayConfirm",
+      "type" : "boolean",
+      "defaultValue" : false,
+      "bond" : "constant"
+    },
+    {
+      "label" : "Confirmation message",
+      "name" : "confirmMessage",
+      "showFor" : "properties.displayConfirm.value",
+      "type" : "text",
+      "defaultValue" : "Are you sure ?",
+      "bond" : "interpolation"
+    },
+    {
+      "label" : "Custom Style",
+      "name" : "customStyle",
+      "type" : "text",
+      "defaultValue" : "{ }",
+      "bond" : "interpolation"
+    }
+  ],
+  "id" : "customWidgetButton",
+  "name" : "widgetButton",
+  "lastUpdate" : 1643214733800,
+  "template" : "@customWidgetButton.tpl.html",
+  "controller" : "@customWidgetButton.ctrl.js",
+  "description" : "Surcharge du composant natif pbButton",
+  "custom" : true,
+  "assets" : [ ],
+  "requiredModules" : [ ],
+  "type" : "widget",
+  "hasHelp" : false
+}

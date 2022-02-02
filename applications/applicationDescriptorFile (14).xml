@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<applications xmlns="http://documentation.bonitasoft.com/application-xml-schema/1.0">
+    <application token="aplicacionSCGjefe" version="1.0" profile="User" homePage="jefehome" state="ACTIVATED" layout="custompage_layoutBonita" theme="custompage_themeBonita">
+        <displayName>SCG</displayName>
+        <description></description>
+        <iconPath></iconPath>
+        <applicationPages>
+            <applicationPage customPage="custompage_HomeCustomPage" token="jefehome"/>
+            <applicationPage customPage="custompage_EditarAreaPage" token="jefearea"/>
+            <applicationPage customPage="custompage_EditarFronteraPage" token="jefefrontera"/>
+            <applicationPage customPage="custompage_EditarInstitucionPage" token="jefeinstitucion"/>
+            <applicationPage customPage="custompage_EditarProcesoPage" token="jefeproceso"/>
+            <applicationPage customPage="custompage_EditarPuntoControlPage" token="jefepuntoControl"/>
+            <applicationPage customPage="custompage_GestionTiposIncidencias" token="gestionTipoIncidencia"/>
+            <applicationPage customPage="custompage_AAAEditarTipoIncidente2" token="tipoIncidente2"/>
+            <applicationPage customPage="custompage_ConsultaMT" token="jefeconsulta"/>
+            <applicationPage customPage="custompage_Cancelaciones" token="jefecancelaciones"/>
+            <applicationPage customPage="custompage_Retornar" token="jeferetornar"/>
+            <applicationPage customPage="custompage_IncidenciasPage" token="jefeincidencias"/>
+            <applicationPage customPage="custompage_SalidaManualPage" token="jefeSalidaManual"/>
+        </applicationPages>
+        <applicationMenus>
+            <applicationMenu>
+                <displayName>Mantenimientos</displayName>
+                <applicationMenus>
+                    <applicationMenu applicationPage="jefearea">
+                        <displayName>Area</displayName>
+                    </applicationMenu>
+                    <applicationMenu applicationPage="jefefrontera">
+                        <displayName>Frontera</displayName>
+                    </applicationMenu>
+                    <applicationMenu applicationPage="jefeinstitucion">
+                        <displayName>Institucion</displayName>
+                    </applicationMenu>
+                    <applicationMenu applicationPage="jefeproceso">
+                        <displayName>Proceso</displayName>
+                    </applicationMenu>
+                    <applicationMenu applicationPage="jefepuntoControl">
+                        <displayName>PuntoControl</displayName>
+                    </applicationMenu>
+                    <applicationMenu applicationPage="gestionTipoIncidencia">
+                        <displayName>Gestión Tipos Incidentes</displayName>
+                    </applicationMenu>
+                    <applicationMenu applicationPage="tipoIncidente2">
+                        <displayName>Tipo Incidente 2</displayName>
+                    </applicationMenu>
+                </applicationMenus>
+            </applicationMenu>
+            <applicationMenu applicationPage="jefeconsulta">
+                <displayName>Consulta</displayName>
+            </applicationMenu>
+            <applicationMenu>
+                <displayName>Acciones en Flujo</displayName>
+                <applicationMenus>
+                    <applicationMenu applicationPage="jefecancelaciones">
+                        <displayName>Cancelacion de flujos</displayName>
+                    </applicationMenu>
+                    <applicationMenu applicationPage="jeferetornar">
+                        <displayName>Retornar Flujos</displayName>
+                    </applicationMenu>
+                    <applicationMenu applicationPage="jefeincidencias">
+                        <displayName>Incidencias</displayName>
+                    </applicationMenu>
+                    <applicationMenu applicationPage="jefeSalidaManual">
+                        <displayName>Salida Manual</displayName>
+                    </applicationMenu>
+                </applicationMenus>
+            </applicationMenu>
+        </applicationMenus>
+    </application>
+</applications>

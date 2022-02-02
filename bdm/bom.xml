@@ -1,0 +1,1326 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0" productVersion="7.11.2">
+    <businessObjects>
+        <businessObject qualifiedName="com.company.model.Accion">
+            <description>TABLA DE LAS ACCIONES REALIZADAS DE FORMA ANTICIPADA O EVENTUAL POR PARTE DEL MEDIO DE TRANSPORTE DENTRO DEL PUESTO FRONTERIZO, POR EJEMPLO: PASAR A ESCANNER, A INSPECCION, A PARQUEO, ETC.</description>
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="false" collection="false">
+                    <description>PK DEL FLUJO DEL MEDIO DE TRANSPORTE RELACIONADO A LA ACCION A REALIZAR</description>
+                </relationField>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <relationField type="AGGREGATION" reference="com.company.model.Institucion" fetchType="LAZY" name="id_institucion" nullable="false" collection="false">
+                    <description>PK DEL CODIGO DE LA INSTITUCION A CARGO DE ORDENAR LA ACCION DEL MEDIO DE TRANSPORTE</description>
+                </relationField>
+                <relationField type="AGGREGATION" reference="com.company.model.Area" fetchType="LAZY" name="id_area" nullable="false" collection="false">
+                    <description>PK DEL AREA DENTRO DEL PUUESTO FRONTERIZO EN LA CUAL EL MEDIO DE TRANSPORTE REALIZARA LA ACCION</description>
+                </relationField>
+                <field type="STRING" length="1" name="origen_accion" nullable="false" collection="false">
+                    <description>ORIGEN DE LA ACCION QUE PUEDE SER ORDENADA DE FORMA AUTOMATICA DESDE LA ENTRADA O DE FORMA MANUAL EN CUALQUIER MOMENTO DESDE LA ENTRADA HASTA ANTES DE LA SALLIDA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="inicio_fecha" nullable="true" collection="false">
+                    <description>FECHA Y HORA DE INICIO DE LA ACCION</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fin_fecha" nullable="true" collection="false">
+                    <description>FECHA Y HORA DE FINALIZACION DE LA ACCION</description>
+                </field>
+                <field type="INTEGER" length="255" name="tiempo_minimo" nullable="true" collection="false">
+                    <description>TIEMPO MINIMO EN MINUTOS EN QUE NORMALMENTE SE DEBE REALIZAR LA ACCION</description>
+                </field>
+                <field type="INTEGER" length="255" name="tiempo_maximo" nullable="true" collection="false">
+                    <description>TIEMPO MAXIMO EN MINUTOS EN QUE NORMALMENTE SE DEBE REALIZAR LA ACCION</description>
+                </field>
+                <field type="INTEGER" length="255" name="tiempo_promedio" nullable="true" collection="false"/>
+                <field type="STRING" length="512" name="accion_observacion" nullable="true" collection="false">
+                    <description>DETALLE DE LA OBSERVACION AL FINALIZAR LA ACCION, LA CUAL PUEDE SER DE FORMA AUTOMATIZADA (WEB SERVICE) O MANUAL</description>
+                </field>
+                <field type="STRING" length="255" name="correo_alerta" nullable="true" collection="false">
+                    <description>CORREO DEFINIDO DE PARTE DE LA INSTITUCION A CARGO DE LA ACCION O DE LA DGA PARA ENVIAR LA ALERTA EN CASO DE QUE LA ACCION YA HAYA SOBREPASADO EL TIEMPO MAXIMO DE LA ACCION PARA QUE SE REALIACE</description>
+                </field>
+                <field type="STRING" length="1" name="enviar_alerta" nullable="true" collection="false">
+                    <description>INDICADOR SE SE HA ENVIADO LA ALERTA AL CORREO DEFINIDO</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_responsable" nullable="false" collection="false">
+                    <description>USUARIO RESPONSABLE A CARGO DE ORDENAR LA ACCION</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_inicio" nullable="true" collection="false">
+                    <description>USUARIO QUE INICIO LA EJECUCION DE LA ACCION</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_fin" nullable="true" collection="false">
+                    <description>USUARIO QUE FINALIZO LA EJECUCION DE LA ACCION</description>
+                </field>
+                <field type="STRING" length="1" name="estado_accion" nullable="false" collection="false">
+                    <description>ESTADO DE LA ACCION QUE REALIZARA EL MEDIO DE TRASNPORTE DENTRO DEL RECINTO FRONTERIZO</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="false" collection="false">
+                    <description>USUARIO DEL SISTEMA  QUE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="2" name="tipo" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries>
+                <query name="findByIdFlujo" content="SELECT a &#13;&#10;FROM Accion a &#13;&#10;WHERE a.id_flujo.persistenceId = :id_flujo&#13;&#10;ORDER BY a.persistenceId ASC" returnType="com.company.model.Accion">
+                    <queryParameters>
+                        <queryParameter name="id_flujo" className="java.lang.Long"/>
+                    </queryParameters>
+                </query>
+                <query name="findbyFlujoArea" content="SELECT a &#13;&#10;FROM Accion a &#13;&#10;WHERE a.id_flujo.persistenceId = :id_flujo AND&#13;&#10;a.id_area.persistenceId = :id_area AND&#13;&#10;a.id_institucion.persistenceId  =:  id_institucion  AND&#13;&#10;a.estado_accion IN ('I','N')&#13;&#10;ORDER BY a.persistenceId ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="id_flujo" className="java.lang.Long"/>
+                        <queryParameter name="id_area" className="java.lang.Long"/>
+                        <queryParameter name="id_institucion" className="java.lang.Long"/>
+                    </queryParameters>
+                </query>
+            </queries>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Alerta">
+            <description>TABLA TIPO BITACORA DE ENVIOS DE CORREOS EN RELACION A ALERTAS INDICANDO QUE EL MEDIO DE TRANSPORTE HA SOBREPASADO EL TIEMPO MAXIMO ESPERADO EN UNA DETERMINADA AREA RELACIONADA A LA ACCION A REALIZAR</description>
+            <fields>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="false" collection="false">
+                    <description>PK RELACIONADO AL FLUJO </description>
+                </relationField>
+                <relationField type="AGGREGATION" reference="com.company.model.Accion" fetchType="LAZY" name="id_accion" nullable="true" collection="false">
+                    <description>PK RELACIONADO A LA ACCION</description>
+                </relationField>
+                <field type="LOCALDATETIME" length="255" name="fecha_alerta" nullable="false" collection="false">
+                    <description>FECHA EN LA QUE SE GENERO LA ALERTA</description>
+                </field>
+                <field type="STRING" length="512" name="descripcion_alerta" nullable="false" collection="false">
+                    <description>DESCRIPCION DE LA ALERTA GENERADA</description>
+                </field>
+                <field type="STRING" length="255" name="correo_alerta" nullable="true" collection="false">
+                    <description>CORREO AL CUAL SE ENVIO LA ALERTA</description>
+                </field>
+                <field type="STRING" length="1" name="estado_alerta" nullable="false" collection="false">
+                    <description>ESTADO DE LA ALERTA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fehca_adicion" nullable="false" collection="false">
+                    <description>FECHA DE LA ADICION DEL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Area">
+            <description>CATÁLOGO DE AREAS CON LAS QUE DISPONE EL PUESTO FRONTERIZO. ESTAS CORRESPONDEN A ACCIONES QUE DEBERÁ REALIZAR DE FORMA PREDETERMINANDA O NO EL MEDIO DE TRANSPORTE. POR EJEMPLO EL AREA DE ESCANNER, EL AREA DE PARQUEO, ETC.</description>
+            <fields>
+                <field type="STRING" length="2" name="codigo_area" nullable="false" collection="false">
+                    <description>CODIGO DEL AREA DEL PF PREVIAMENTE DEFINIDO</description>
+                </field>
+                <field type="STRING" length="255" name="nombre_area" nullable="false" collection="false">
+                    <description>NOMBRE DEL AREA DADO POR LA DGA</description>
+                </field>
+                <field type="INTEGER" length="255" name="tiempo_minimo" nullable="true" collection="false">
+                    <description>TIEMPO MINIMO ESPERADO QUE UN MT DEBE PERMANECER EN DICHA AREA</description>
+                </field>
+                <field type="INTEGER" length="255" name="tiempo_maximo" nullable="true" collection="false">
+                    <description>TIEMPO MAXIMO ESPERADO QUE UN MT DEBE PERMANECER EN DICHA AREA</description>
+                </field>
+                <field type="INTEGER" length="255" name="tiempo_promedio" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="alerta_inicio" nullable="true" collection="false">
+                    <description>TIEMPO INICIAL EN EL CUAL SE GENERA LA ALERTA</description>
+                </field>
+                <field type="INTEGER" length="255" name="alerta_subsecuente" nullable="true" collection="false">
+                    <description>TIEMPO EN EL CUAL SE GENERA LA SIGUIENTE ALERTA</description>
+                </field>
+                <field type="INTEGER" length="255" name="capacidad_area_mt" nullable="true" collection="false">
+                    <description>CAPACIDAD FISICA DEL AREA PARA ATENCION DE LOS MEDIOS DE TRANSPORTE</description>
+                </field>
+                <field type="STRING" length="1" name="estado_registro" nullable="false" collection="false">
+                    <description>ESTADO DEL REGISTRO&#13;
+"A" - ACTIVO&#13;
+"I" - INACTIVO</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_adicion" nullable="false" collection="false">
+                    <description>FECHA EN LA QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints>
+                <uniqueConstraint name="UNIQUE_CONSTRAINT_1">
+                    <fieldNames>
+                        <fieldName>codigo_area</fieldName>
+                    </fieldNames>
+                </uniqueConstraint>
+            </uniqueConstraints>
+            <queries>
+                <query name="findestado" content="SELECT a&#13;&#10;FROM  Area a&#13;&#10;WHERE a.estado_registro=: estado_registro " returnType="com.company.model.Area">
+                    <queryParameters>
+                        <queryParameter name="estado_registro" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+            </queries>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.BitacoraExterna">
+            <description>BITACORA DE ACCESOS AL MODULO EXTERNO DE CONSULTA DE LOS ESTADOS ACTUALES Y/O HISTORICOS DE LOS MEDIOS DE TRANSPORTE QUE LLLEGARON O QUE LLEGARAN AL PUESTO FRONTERIZO DE ANGUIATU</description>
+            <fields>
+                <field type="LOCALDATETIME" length="255" name="fecha_consulta" nullable="false" collection="false">
+                    <description>FECHA DE ACCESO AL MODULO DE CONSULTA EXTERNA</description>
+                </field>
+                <field type="STRING" length="255" name="placa" nullable="true" collection="false">
+                    <description>NÚMERO DE PLACA CONSULTADA, SI ESTE FUE EL PARÁMETRO UTILIZADO.</description>
+                </field>
+                <field type="STRING" length="255" name="documento" nullable="true" collection="false">
+                    <description>NÚMERO DE DOCUMENTO DEL TRANSPORTISTA PARA LA CONSULTA, SI ESTE FUE EL PARÁMETRO UTILIZADO.</description>
+                </field>
+                <field type="STRING" length="255" name="ip" nullable="true" collection="false">
+                    <description>IP DESDE QUE SE REALIZO LA CONSULTA</description>
+                </field>
+                <field type="STRING" length="255" name="url" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="descripcion" nullable="true" collection="false">
+                    <description>DESCRIPCION DE LA CONSULTA</description>
+                </field>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Flujo">
+            <description>TABLA PRINCIPAL MAESTRA DE LOS FLUJOS DE LOS MEDIOS DE TRANSPORTE QUE ATRAVIESAN EL PUESTO FRONTERIZO.&#13;
+SE ALMACENARA UN REGISTRO POR FLUJO</description>
+            <fields>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <relationField type="AGGREGATION" reference="com.company.model.Frontera" fetchType="LAZY" name="id_frontera" nullable="false" collection="false">
+                    <description>PK DE LA TABLA PADRE DE LAS FRONTERAS DEL PAIS</description>
+                </relationField>
+                <relationField type="AGGREGATION" reference="com.company.model.Proceso" fetchType="LAZY" name="id_proceso" nullable="false" collection="false">
+                    <description>PK DE LA TABLA PADRE DE LOS PRROCESOS</description>
+                </relationField>
+                <relationField type="AGGREGATION" reference="com.company.model.TipoMedioTransporte" fetchType="LAZY" name="id_tipo_mt" nullable="false" collection="false">
+                    <description>PK DE LA TABLA PADRE LLOS TIPOS DE LOS MEDIOS DE TRANSPORTE</description>
+                </relationField>
+                <field type="STRING" length="1" name="tipo_flujo" nullable="false" collection="false">
+                    <description>TIPO DE CRACION DEL FLUJO:&#13;
+&#13;
+"A" - AUTOMIATICO (LECTURA AUTOMATICA)&#13;
+"M" - MANUAL (LECTURA MANUAL)</description>
+                </field>
+                <field type="STRING" length="512" name="id_origen_lectura" nullable="true" collection="false">
+                    <description>ID DEL RESGITRO DE LA LECTURA AUTOMATICA A PARTIR DEL CUAL FUE CREADO EL FLUJO, SI ES EL CASO. ESTE VALOR SE PODRA UTILIZAR POSTERIORMENTE PARA CONSULTA DE INFORMACION EN LA BASE DE DATOS DE LOS SISTEMAS ESPECIALES</description>
+                </field>
+                <relationField type="AGGREGATION" reference="com.company.model.PuntoControl" fetchType="LAZY" name="id_pc_ingreso" nullable="false" collection="false">
+                    <description>PUNTO DE CONTROL DE ENTRADA AL PUESTO FRONTERIZO:&#13;
+"E001" - ENTRADA DESDE EL SALVADOR&#13;
+"E002" - ENTRADA DESDE GUATEMALA</description>
+                </relationField>
+                <relationField type="AGGREGATION" reference="com.company.model.PuntoControl" fetchType="LAZY" name="id_pc_salida" nullable="false" collection="false">
+                    <description>PUNTO DE CONTROL DE SALIDA DEL PUESTO FRONTERIZO:&#13;
+"S001" - SALIDA HACIA GUATEMALA&#13;
+"S002" - SALIDA HACIA EL SALVADOR</description>
+                </relationField>
+                <field type="LOCALDATETIME" length="255" name="fecha_inicio" nullable="false" collection="false">
+                    <description>FECHA Y HORA DE ENTRADA DEL MEDIO DE TRANSPORTE AL PUESTO FRONTERIZO, EL CUAL ES LA FECHA Y HORA DE INICIO DEL FLUJO</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_fin" nullable="true" collection="false">
+                    <description>FECHA Y HORA DE SALIDA DEL MEDIO DE TRANSPORTE DEL PUESTO FRONTERIZO, EL CUAL ES LA FECHA Y HORA DE FINALIZACION DEL FLUJO</description>
+                </field>
+                <field type="INTEGER" length="255" name="t_minimo" nullable="true" collection="false">
+                    <description>TIEMPO MINIMO NORMAL DEL MEDIO DE TRANSPORTE EN DENTRO DEL PUESTO FRONTERIZO DE ACUERDO AL PROCESO REALIZADO</description>
+                </field>
+                <field type="STRING" length="100" name="placa" nullable="false" collection="false">
+                    <description>NUMERO DE PLACA DEL MEDIO DE TTRANSPORTE</description>
+                </field>
+                <field type="INTEGER" length="255" name="t_maximo" nullable="true" collection="false">
+                    <description>TIEMPO MAXIMO NORMAL DEL MEDIO DE TRANSPORTE EN DENTRO DEL PUESTO FRONTERIZO DE ACUERDO AL PROCESO REALIZADO</description>
+                </field>
+                <relationField type="AGGREGATION" reference="com.company.model.Pais" fetchType="LAZY" name="placa_pais" nullable="true" collection="false"/>
+                <field type="STRING" length="100" name="trasera" nullable="true" collection="false">
+                    <description>NUMERO DE LA PLACA TRASERA DEL MEDIO DE TTRANSPORTE</description>
+                </field>
+                <relationField type="AGGREGATION" reference="com.company.model.Pais" fetchType="LAZY" name="trasera_pais" nullable="true" collection="false">
+                    <description>PAIS DE LA PLACA TRASERA</description>
+                </relationField>
+                <field type="STRING" length="20" name="contenedor" nullable="true" collection="false">
+                    <description>NUMERO DEL CONTENEDOR DEL MEDIO DE TTRANSPORTE</description>
+                </field>
+                <field type="STRING" length="10" name="marchamo" nullable="true" collection="false">
+                    <description>NUMERO DE MARCHAMO (CODIGO RFID, EN OCASIONES) DEL MEDIO DE TRANSPORTE</description>
+                </field>
+                <field type="STRING" length="100" name="parabrisas" nullable="true" collection="false">
+                    <description>NUMERO DEL PARABRISAS (CODIGO RFID, EN CASO DE LEERSE) DEL MEDIO DE TRANSPORTE</description>
+                </field>
+                <field type="DOUBLE" length="20" name="peso" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="5" name="vacio_con_documento" nullable="false" collection="false">
+                    <description>MEDIO DE TRANSPORTE VACIO (SIN MERCANCIA, EN TRANSITO):&#13;
+"S" - SI&#13;
+"N" - NO</description>
+                </field>
+                <field type="BOOLEAN" length="255" name="vacio_sin_documento" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.TipoDocViaje" fetchType="LAZY" name="tipo_documento" nullable="true" collection="false"/>
+                <field type="STRING" length="100" name="no_doc_motorista" nullable="true" collection="false">
+                    <description>NUMERO DE DOCUMENTO PERSONAL DEL MOTORISTA</description>
+                </field>
+                <relationField type="AGGREGATION" reference="com.company.model.Pais" fetchType="LAZY" name="pais_documento" nullable="true" collection="false">
+                    <description>CODIIGO DEL PAIS ORIGEN DEL DOCUMENTOO PERSONAL DEL MOTORISTA</description>
+                </relationField>
+                <field type="LOCALDATETIME" length="255" name="fecha_venc_doc_motorista" nullable="true" collection="false">
+                    <description>FECHA DE VENCIMIENTO DEL DOCUMENTO DEL MOTORISTA</description>
+                </field>
+                <field type="STRING" length="100" name="nombres_motorista" nullable="true" collection="false">
+                    <description>NOMBRES DEL MOTORISTA SEGUN DOCUMENTO</description>
+                </field>
+                <field type="STRING" length="100" name="apellidos_motorista" nullable="true" collection="false">
+                    <description>APELLIDOS DEL MOTORISTA SEGUN DOCUMENTO</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_nac_motorista" nullable="true" collection="false">
+                    <description>FECHA DE NACIMIENTO DEL MOTORISTA SEGUN DOCUMENTO</description>
+                </field>
+                <field type="STRING" length="512" name="observacion_flujo" nullable="true" collection="false">
+                    <description>OBSERVACION GENERAL DEL FLUJO DEL MEDIO DE TRANSPORTE</description>
+                </field>
+                <field type="STRING" length="255" name="correo_aviso" nullable="true" collection="false">
+                    <description>CORREO AL CUAL SE NOTIFICARA CUALQUIER AVISO EN RELACION AL FLUJO DEL MEDIO DE TRANSPORTE (EN CASO DE SER NECESARIO)</description>
+                </field>
+                <field type="STRING" length="255" name="telefono_aviso" nullable="true" collection="false">
+                    <description>NUMERO DE TELEFONO AL CUAL SE NOTIFICARA CUALQUIER AVISO EN RELACION AL FLUJO DEL MEDIO DE TRANSPORTE (EN CASO DE SER NECESARIO)</description>
+                </field>
+                <field type="BOOLEAN" length="255" name="parqueo" nullable="false" collection="false"/>
+                <field type="STRING" length="1" name="tipo_finalizacion" nullable="false" collection="false">
+                    <description>TIPO DE FINALIZACION DEL FLUJO DEL MEDIO DE TRANSPORTE:&#13;
+&#13;
+"P" - PENDIENTE (AL INICIAR)&#13;
+"E" - EXITOSO  (SALIDA EXITOSA)&#13;
+"R" - RETORNADO (REGRESA AL PAIS DESDE DONDE ENTRO AL PF)&#13;
+"C" - CANCELADO (POR CUALQUIER MOTIVO)</description>
+                </field>
+                <field type="STRING" length="1" name="salida_lista_dga" nullable="false" collection="false">
+                    <description>VALOR  QUE INDICA SI EL MEDIO DE TRANSPORTE PUEDE SALIR O NO DEL PUESTO FRONTERIZO POR DGA (LE HACE FALTA ALGUN TRÁMITE O DEBE DE RETORNAR, POR EJEMPLO)&#13;
+"S" - SI&#13;
+"N" - NO</description>
+                </field>
+                <field type="STRING" length="1" name="salida_lista_dgme" nullable="true" collection="false">
+                    <description>VALOR  QUE INDICA SI EL MEDIO DE TRANSPORTE PUEDE SALIR O NO DEL PUESTO FRONTERIZO  PARA DGME (LE HACE FALTA ALGUN TRÁMITE O DEBE DE RETORNAR, POR EJEMPLO)&#13;
+"S" - SI</description>
+                </field>
+                <field type="STRING" length="1" name="salida_lista_mag" nullable="true" collection="false">
+                    <description>VALOR  QUE INDICA SI EL MEDIO DE TRANSPORTE PUEDE SALIR O NO DEL PUESTO FRONTERIZO POR MAG(LE HACE FALTA ALGUN TRÁMITE O DEBE DE RETORNAR, POR EJEMPLO)&#13;
+"S" - SI</description>
+                </field>
+                <field type="STRING" length="1" name="inicio_salida" nullable="false" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="fecha_inicio_salida" nullable="true" collection="false">
+                    <description>FECHA EN LA QUE INICIA LA SALIDA DEL MEDIO DE TRANSPORTE </description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_entrada_lista" nullable="true" collection="false">
+                    <description>FECUA EN LA QUE SE FINALIZA LA ENTRADA DEL MEDIO DE TRANSPORTE AL PUESTO FRONTERIZO</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_salida_lista_dga" nullable="true" collection="false">
+                    <description>FECHA EN LA QUE SE DETERMINA QUE EL MEDIO ESTA LISTO PARA SALIR</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_salida_lista_dgme" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="fecha_salida_lista_mag" nullable="true" collection="false"/>
+                <field type="STRING" length="1" name="estado_flujo" nullable="false" collection="false">
+                    <description>ESTADO ACTUAL DEL FLUJO:&#13;
+"I" - INICIADO&#13;
+"F" - FINALIZADO (POR CUALQUIER MOTIVO)</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="false" collection="false">
+                    <description>USUARIO DEL SISTEMA  QUE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints/>
+            <queries>
+                <query name="qrFlujoPlacaActivo" content="SELECT f &#13;&#10;FROM Flujo f &#13;&#10;WHERE&#13;&#10;f.placa = :PLACA&#13;&#10;AND f.estado_flujo = :ESTADO_FLUJO&#13;&#10;ORDER BY f.persistenceId ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="PLACA" className="java.lang.String"/>
+                        <queryParameter name="ESTADO_FLUJO" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+                <query name="qrConsultaMT" content="SELECT f &#13;&#10;FROM Flujo f &#13;&#10;WHERE :placa is null or &#13;&#10;f.placa = :placa&#13;&#10;ORDER BY f.persistenceId ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="placa" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+                <query name="qrFlujoActivoSalidaLista" content="SELECT f &#13;&#10;FROM Flujo f &#13;&#10;WHERE&#13;&#10;f.placa = :placa&#13;&#10;AND f.estado_flujo = :estado_flujo&#13;&#10;AND f.salida_lista_dga = :salida_lista&#13;&#10;ORDER BY f.persistenceId ASC" returnType="com.company.model.Flujo">
+                    <queryParameters>
+                        <queryParameter name="placa" className="java.lang.String"/>
+                        <queryParameter name="salida_lista" className="java.lang.String"/>
+                        <queryParameter name="estado_flujo" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+                <query name="qrFlujoAccion" content="SELECT f &#13;&#10;FROM Flujo f &#13;&#10;WHERE&#13;&#10;f.placa = :PLACA&#13;&#10;AND f.estado_flujo = :ESTADO_FLUJO&#13;&#10;AND f.fecha_entrada_lista  is not null&#13;&#10;ORDER BY f.persistenceId ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="PLACA" className="java.lang.String"/>
+                        <queryParameter name="ESTADO_FLUJO" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+                <query name="qrFlujoPlacaActivoE" content="SELECT f &#13;&#10;FROM Flujo f &#13;&#10;WHERE&#13;&#10;f.placa = :PLACA&#13;&#10;AND f.estado_flujo = :ESTADO_FLUJO AND&#13;&#10;f.fecha_entrada_lista &lt;&gt;null&#13;&#10;ORDER BY f.persistenceId ASC" returnType="com.company.model.Flujo">
+                    <queryParameters>
+                        <queryParameter name="PLACA" className="java.lang.String"/>
+                        <queryParameter name="ESTADO_FLUJO" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+            </queries>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Frontera">
+            <description>CATÁLOGO DE FRONTERAS AÉREAS, MARÍTIMAS Y TERRESTRES DE EL SALVADOR. </description>
+            <fields>
+                <field type="STRING" length="2" name="codigo_frontera" nullable="false" collection="false">
+                    <description>CODIGO DE LA FRONTERA, TENDRÁ INICIALMENTE UN REGISTRO "01" ANGUIATÚ.  SE CONFIGURARÁ DESDE LA IMPLEMENTACIÓN.</description>
+                </field>
+                <field type="STRING" length="255" name="nombre_frontera" nullable="false" collection="false">
+                    <description>NOMBRE OFICIAL DE LA FRONTERA DADO POR PARTE DE LA DGA</description>
+                </field>
+                <field type="STRING" length="1" name="tipo_frontera" nullable="false" collection="false">
+                    <description>TIPO DE LA FRONTERA&#13;
+"1" - TERRESTRE&#13;
+"2" - AEREA&#13;
+"3" - MARITIMA</description>
+                </field>
+                <field type="INTEGER" length="255" name="capacidad_mt" nullable="true" collection="false"/>
+                <field type="STRING" length="1" name="estado_registro" nullable="false" collection="false">
+                    <description>ESTADO DEL REGISTRO&#13;
+"A" - ACTIVO&#13;
+"I" - INACTIVO</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="false" collection="false">
+                    <description>USUARIO DEL SISTEMA  QUE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints>
+                <uniqueConstraint name="UNIQUE_CONSTRAINT_3">
+                    <fieldNames>
+                        <fieldName>codigo_frontera</fieldName>
+                    </fieldNames>
+                </uniqueConstraint>
+            </uniqueConstraints>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Incidente">
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="false" collection="false">
+                    <description>PK DE LA TABLA FLUJO</description>
+                </relationField>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_incidente" nullable="false" collection="false">
+                    <description>FECHA EN LA QUE SE DA EL INICIDENTE</description>
+                </field>
+                <relationField type="AGGREGATION" reference="com.company.model.TipoIncidente" fetchType="LAZY" name="id_tipo_incidente" nullable="false" collection="false">
+                    <description>TIPO DE INCIDENTE </description>
+                </relationField>
+                <field type="STRING" length="255" name="descripcion_incidente" nullable="false" collection="false">
+                    <description>DESCRIPCION DEL INCIDENTE</description>
+                </field>
+                <field type="STRING" length="1" name="estado_incidente" nullable="false" collection="false">
+                    <description>ESTADO EN EL QUE SE ENCUENTRA EL INCIDENTE</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_adicion" nullable="false" collection="false">
+                    <description>FECHA EN LA QUE SE INSERTA EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Institucion">
+            <description>CATALOGO DE INSTITUCIONES QUE INTERVIENEN DENTRO DE CADA UNO DE LOS PROCESOS DEL MT EN EL PF</description>
+            <fields>
+                <field type="STRING" length="2" name="codigo_institucion" nullable="false" collection="false">
+                    <description>COODIGO DE LA INSTITUCION, LOS CUALES SE DEFINEN DESDE LA IMPLEMENTACIÓN.</description>
+                </field>
+                <field type="STRING" length="255" name="nombre_institucion" nullable="false" collection="false">
+                    <description>NOMBRE FORMAL DE LA INSTITUCION</description>
+                </field>
+                <field type="STRING" length="255" name="siglas_institucion" nullable="false" collection="false">
+                    <description>SIGLAS FORMALES CON LAS QUE SE CONOCE A LA INSTITUCIÓN.</description>
+                </field>
+                <field type="STRING" length="255" name="correo_alerta" nullable="true" collection="false">
+                    <description>CORREO CONFIGURADO INICIALMENTE AL CUAL SE ENVIARÁ NOTIFICACIÓN AUTÓMATICA, UNA VEZ EL MT HAYA SOBREPASADO EL TIEMPO MÁXIMO DEFINIDO PARA CADA ÁREA.</description>
+                </field>
+                <field type="STRING" length="1" name="estado_registro" nullable="false" collection="false">
+                    <description>ESTADO DEL REGISTRO&#13;
+"A" - ACTIVO&#13;
+"I" - INACTIVO</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN DEL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="false" collection="false">
+                    <description>USUARIO DEL SISTEMA  QUE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints>
+                <uniqueConstraint name="UNIQUE_CONSTRAINT_4">
+                    <fieldNames>
+                        <fieldName>codigo_institucion</fieldName>
+                    </fieldNames>
+                </uniqueConstraint>
+            </uniqueConstraints>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.LecturaPunto">
+            <description>TABLA INICIAL A PARTIR DE LA CUAL SE CREARÁ EL FLUJO DEL MEDIO DE TRANSPORTE (PARA EL CASO DE LOS PUNTOS DE CONTROL DE ENTRADAS), ASI COMO SERA EN LA CUAL SE ALMACENARAN TODAS LAS LECTURAS ALMACENADAS EN CADA UNO DE LOS PUNTOS DE CONTROL DEL PUESTO FRONTERIZO (INCLUYENDO LAS SALIDAS PARA FINALIZAR LOS FLUJOS)</description>
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="true" collection="false">
+                    <description>PK DE LA TABLA FLUJO</description>
+                </relationField>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <relationField type="AGGREGATION" reference="com.company.model.Mensaje" fetchType="LAZY" name="id_mensaje" nullable="true" collection="false">
+                    <description>PK DE LA TABLA PADRE DE MENSAJES A ENVIAR A LA PANTALLA, SI ES EL CASO</description>
+                </relationField>
+                <relationField type="AGGREGATION" reference="com.company.model.TipoMedioTransporte" fetchType="LAZY" name="id_tipo_mt" nullable="true" collection="false">
+                    <description>PK DE LA TABLA PADRE RELACIONA AL TIPO DEL MEDIO DE TRANSPORTE</description>
+                </relationField>
+                <relationField type="AGGREGATION" reference="com.company.model.PuntoControl" fetchType="LAZY" name="id_pc" nullable="false" collection="false">
+                    <description>PK DE LA TABLA PADRE RELACIONADA A LOS PUNTOS DE CONTROL DEFINIDOS</description>
+                </relationField>
+                <field type="STRING" length="1" name="tipo_lectura" nullable="true" collection="false">
+                    <description>TIPO DE LECTURA A PARTIR DE LA CUAL SE CREARÁ EL REGISTRO EN LA TABLA, LA CUAL PUEDE SER:&#13;
+&#13;
+"A" - AUTOMATICA, SE REALIZA A PARTIR DE LOS DISPOSITIIVOS FISICOS&#13;
+"M" - MANUAL, SE REALIZA POR MEDIO DE UNA ENTRADA DE DATOS REALIZADA POR EL USUARIO (PANTALLA DEL SCG)</description>
+                </field>
+                <field type="STRING" length="512" name="id_origen_la" nullable="true" collection="false">
+                    <description>PK ORIGEN DE LA LECTURA AUTOMATICA RECIBIA. EN CASO DE QUE LA LECTURA SEA MANUAL, ESE VALOR ES NULL</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_lectura" nullable="false" collection="false">
+                    <description>FECHA DE LECTURA DEL MEDIO DE TRANSPORTE EN EL MOMENTO DE PASAR ELL PUNTO DE CONTROL (INTERNO, ENTRADA O SALIDA)</description>
+                </field>
+                <field type="STRING" length="17" name="placa" nullable="false" collection="false">
+                    <description>NUMERO DE PLACA DEL MEDIO DE TRANSPORTE</description>
+                </field>
+                <field type="STRING" length="17" name="trasera" nullable="true" collection="false">
+                    <description>NUMERO DE PLACA TRASERA DEL MEDIO DE TRANSPORTE</description>
+                </field>
+                <field type="STRING" length="20" name="contenedor" nullable="true" collection="false">
+                    <description>NUMERO DE CONTENEDOR DEL MEDIO DE TRANSPORTE</description>
+                </field>
+                <field type="STRING" length="100" name="marchamo" nullable="true" collection="false">
+                    <description>NUMERO DE MARCHAMO (CODIGO RFID, EN OCASIONES) DEL MEDIO DE TRANSPORTE</description>
+                </field>
+                <field type="STRING" length="100" name="parabrisas" nullable="true" collection="false">
+                    <description>NUMERO DEL PARABRISAS (CODIGO RFID, EN CASO DE LEERSE) DEL MEDIO DE TRANSPORTE</description>
+                </field>
+                <field type="STRING" length="255" name="rostro" nullable="true" collection="false">
+                    <description>NUMERO IDENTIFICADOR DE LA IMAGEN DEL ROSTRO DEL MOTORISTA DEL MEDIO DE TRANSPORTE. ESTA IIMAGEN ESTARA ALMACENADA EN LA BASE DE DATOS DE LOS SISTEMAS ESPECIALES.</description>
+                </field>
+                <field type="DOUBLE" length="100" name="peso" nullable="true" collection="false">
+                    <description>VALOR DEL PESO LEIDO DEL MEDIO DE TRANSPORTE.</description>
+                </field>
+                <field type="STRING" length="255" name="id_imagen" nullable="true" collection="false">
+                    <description>IDENTIFICADOR DE LA IMAGEN DENTRO DE LA BASE DE LOS SISTEMAS ESPECIALES PARA SU POSTERIOR CONSULTA, SI ES NECESARIO.</description>
+                </field>
+                <field type="STRING" length="255" name="id_video" nullable="true" collection="false">
+                    <description>IDENTIFICADOR DEL VIDEO DEL MEDIO DE TRANSPORTE EN LA BASE DE LOS SISTEMAS ESPECIALES PARA SU POSTERIOR CONSULTA, SI ES NECESARIO.</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_instruccion" nullable="true" collection="false">
+                    <description>FECHA EN LA CUAL SE ENVIO LA INSTRUCCION DE RESPUESTA PARA REALIZAR ACCIONES LOS EQUIPOS FISICOS (PLUMA, PANTALLA, ENETRE OTROS) DEL PUNTO DE CONTROL.</description>
+                </field>
+                <field type="INTEGER" length="255" name="no_pluma" nullable="true" collection="false">
+                    <description>NUMERO DE LA PLUMA PARA LOS CASOS DE LOS PUNTOS DE CONTROL QUE TIENEN UN MAXIMO DE 2 PLUMAS&#13;
+"0" - NO APLICA&#13;
+"1" - PLUMA IZQUIERDA OBSERVANDO DESDE LA VISTA DEL MOTORISTA&#13;
+"2" - PLUMA DERECHA OBSERVANDO DESDE LA VISTA DEL MOTORISTA&#13;
+</description>
+                </field>
+                <field type="STRING" length="1" name="accion_pluma" nullable="true" collection="false">
+                    <description>ACCION A REALIZAR EN LA PLUMA:&#13;
+"0" -  NO APICA&#13;
+"1" - ABRIR&#13;
+"2" - CERRAR (NORMALMENTE NO SE UTILIZARA)</description>
+                </field>
+                <field type="STRING" length="1" name="estado_lectura" nullable="false" collection="false">
+                    <description>ESTADO DE LA LECTURA AUTOMATICA O MANUAL DEL MEDIO DE TRANSPORTE:&#13;
+"1" - LEIDA&#13;
+"2" - RESPONDIDA&#13;
+"3" - NO APLICA (NORMALMENTE NO UTILIZADO)</description>
+                </field>
+                <field type="STRING" length="1" name="estado_registro" nullable="false" collection="false">
+                    <description>ESTADO DEL REGISTRO:&#13;
+"I" - INGRESADO&#13;
+"P" PROCESADO&#13;
+"C" CANCELADO</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="false" collection="false">
+                    <description>USUARIO DEL SISTEMA  QUE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Mensaje">
+            <description>TABLA DE MENSAJES PREVIAMENTE CONFIIGURADOS PARA ENVIARLOS DE RESPUESTA A LAS PANTALLAS FÍSICAS DE CADA UNO DE LOS PUNTOS DE CONTROL, SI EN DADO CASO ES NECESARIO.</description>
+            <fields>
+                <field type="STRING" length="2" name="codigo_mensaje" nullable="false" collection="false">
+                    <description>CODIGO DEL MENSAJE A ENVIAR A LA PANTALLA</description>
+                </field>
+                <field type="STRING" length="512" name="descripcion_mensaje" nullable="false" collection="false">
+                    <description>DESCRIPCIÓN DEL MENSAJE A ENNVIAR A LA PANTALLA DEL PUNTO DE CONTROL.</description>
+                </field>
+                <field type="STRING" length="1" name="estado_registro" nullable="false" collection="false">
+                    <description>ESTADO DEL REGISTRO&#13;
+"A" - ACTIVO&#13;
+"I" - INACTIVO</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="false" collection="false">
+                    <description>USUARIO DEL SISTEMA  QUE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints>
+                <uniqueConstraint name="UNIQUE_CONSTRAINT_5">
+                    <fieldNames>
+                        <fieldName>codigo_mensaje</fieldName>
+                    </fieldNames>
+                </uniqueConstraint>
+            </uniqueConstraints>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Pais">
+            <description>CATALOGO DE PAISES LOS CUALES SE UTILIZARAN PARA EL ORIGEN DE LOS DOCUMENTOS PERSONALES, OIRIGENES Y DESTINOS DE MERCANCIAS ENTRE OTROS.</description>
+            <fields>
+                <field type="STRING" length="3" name="codigo_pais" nullable="false" collection="false">
+                    <description>CODIGO DEL PAIS A UTILIZAR</description>
+                </field>
+                <field type="STRING" length="255" name="nombre_pais" nullable="false" collection="false">
+                    <description>NOMBRE DEL PAIS</description>
+                </field>
+                <field type="STRING" length="1" name="estado_registro" nullable="false" collection="false">
+                    <description>ESTADO DEL REGISTRO&#13;
+"A" - ACTIVO&#13;
+"I" - INACTIVO</description>
+                </field>
+                <field type="STRING" length="255" name="fecha_adicion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints>
+                <uniqueConstraint name="UNIQUE_CONSTRAINT_6">
+                    <fieldNames>
+                        <fieldName>codigo_pais</fieldName>
+                    </fieldNames>
+                </uniqueConstraint>
+            </uniqueConstraints>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Plazos">
+            <fields>
+                <field type="STRING" length="255" name="codigo_plazo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="plazo" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Proceso">
+            <description>CATÁLOGO DE PROCESOS A GESTIONAR POR EL SISTEMA, POR EJEMPLO EXPORTACIONES, IMPORTACIONES Y TRANSITOS EN AMBOS SENTIDOS.</description>
+            <fields>
+                <field type="STRING" length="2" name="codigo_proceso" nullable="false" collection="false">
+                    <description>CODIGO DEL PROCESO, EL CUAL SE CONFIGURARÁ DESDE LA IMPLEMENTACIÓN</description>
+                </field>
+                <field type="STRING" length="255" name="nombre_proceso" nullable="false" collection="false">
+                    <description>NOMBRE FORMAL DEL PROCESO DADO POR LA DGA</description>
+                </field>
+                <field type="INTEGER" length="255" name="tiempo_minimo" nullable="true" collection="false">
+                    <description>TIEMPO MINIMO NORMAL ESPERADO QUE TARDE EL PROCESO DEL MT DESDE QUE ENTRA HASTA QUE SALE DEL PF.</description>
+                </field>
+                <field type="INTEGER" length="255" name="tiempo_maximo" nullable="true" collection="false">
+                    <description>TIEMPO MAXIMO NORMAL ESPERADO QUE TARDE EL PROCESO DEL MT DESDE QUE ENTRA HASTA QUE SALE DEL PF.</description>
+                </field>
+                <field type="INTEGER" length="255" name="tiempo_promedio" nullable="true" collection="false"/>
+                <field type="STRING" length="1" name="estado_registro" nullable="false" collection="false">
+                    <description>ESTADO DEL REGISTRO&#13;
+"A" - ACTIVO&#13;
+"I" - INACTIVO</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints>
+                <uniqueConstraint name="UNIQUE_CONSTRAINT_8">
+                    <fieldNames>
+                        <fieldName>codigo_proceso</fieldName>
+                    </fieldNames>
+                </uniqueConstraint>
+            </uniqueConstraints>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.PuntoControl">
+            <description>PUNTOS DE CONTROL DEFINIDOS FISICAMENTE EN EL PF. ESTOS CORRESPONDERAN A LOS PUNTOS EN LOS CUALES HABRÁ AL MENOS UNA LECTURA DE PLACA EN EL CASO QUE FUNCIONEN. NORMALMENTE SON PUNTOS DE CONTROL INTERNOS, INCLUYENDO LAS ENTRADAS Y SALIDAS AL PF.</description>
+            <fields>
+                <field type="STRING" length="4" name="codigo_pc" nullable="false" collection="false">
+                    <description>CODIGO DEL PUNTO DE CONTROL DEL PUESTO FRONTERIZO, QUE INCLUYEN LAS ENTRADAS Y SALIDAS AL MISMO.</description>
+                </field>
+                <field type="STRING" length="1" name="tipo_pc" nullable="false" collection="false">
+                    <description>TIPO DE PUNTO DE CONTROL DEL PF:&#13;
+"E" - ENTRADA&#13;
+"S" - SALIDA&#13;
+"I" - INTERNO</description>
+                </field>
+                <field type="STRING" length="1" name="ocupado" nullable="false" collection="false">
+                    <description>VARIABLE QUE INDICARA SI SE ENCUENTRA UN MT EN EL PUNTO DE CONTROL Y EN ESPERA DE LA INDICACION PARA SU CONTINUACION</description>
+                </field>
+                <field type="STRING" length="255" name="nombre_pc" nullable="false" collection="false">
+                    <description>NOMBRE DEL PUNTO DEL CONTROL </description>
+                </field>
+                <field type="INTEGER" length="255" name="alerta_inicio" nullable="true" collection="false">
+                    <description>TIEMPO EN EL QUE SE GENERA LA PRIMERA ALERTA</description>
+                </field>
+                <field type="INTEGER" length="255" name="alerta_subsecuente" nullable="true" collection="false">
+                    <description>TEIMPO EN EL QUE SE REALIZA LA SEGUNDA ALERTA</description>
+                </field>
+                <field type="STRING" length="1" name="estado_registro" nullable="false" collection="false">
+                    <description>ESTADO DEL REGISTRO&#13;
+"A" - ACTIVO&#13;
+"I" - INACTIVO</description>
+                </field>
+                <relationField type="AGGREGATION" reference="com.company.model.Pais" fetchType="LAZY" name="id_pais" nullable="true" collection="false">
+                    <description>PAIS AL QUE PERTENECE EL PUNTO DE CONTROL</description>
+                </relationField>
+                <field type="LOCALDATETIME" length="255" name="fecha_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints>
+                <uniqueConstraint name="UNIQUE_CONSTRAINT_7">
+                    <fieldNames>
+                        <fieldName>codigo_pc</fieldName>
+                    </fieldNames>
+                </uniqueConstraint>
+            </uniqueConstraints>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.RESTAccionActividad">
+            <description>SE ALMACENA EL LOG DEL METODO ACCIONACTIVIDAD&#13;
+</description>
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="true" collection="false">
+                    <description>PK DE LA TABLA FLUJO</description>
+                </relationField>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <field type="INTEGER" length="255" name="id_identificador" nullable="true" collection="false">
+                    <description>ii</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha" nullable="true" collection="false"/>
+                <field type="STRING" length="17" name="tra_pla_nbr" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Institucion" fetchType="LAZY" name="id_institucion" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Area" fetchType="LAZY" name="id_area" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="inicio_fecha" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="fin_fecha" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="accion_observacion" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="usuario_responsable" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="usuario_inicio" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="usuario_fin" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="correo_alerta" nullable="true" collection="false"/>
+                <field type="STRING" length="1" name="enviar_alerta" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="usuario_adicion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="1" name="estado_accion" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="fecha_respuesta" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="error_descripcion" nullable="true" collection="false"/>
+                <field type="STRING" length="2" name="respuesta" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="fecha_registro" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.RESTConteinersList">
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.RESTDucaOuputList" fetchType="LAZY" name="duca_ouput_list" nullable="true" collection="false"/>
+                <field type="STRING" length="35" name="ctn_ide" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="fecha_registro" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.RESTDGME">
+            <description>SE ALMACENA EL LOG DE LOS DATOS OBTENIDOS EN EL METODO DGME&#13;
+</description>
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="true" collection="false">
+                    <description>PK DE LA TABLA FLUJO</description>
+                </relationField>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <field type="STRING" length="255" name="placa" nullable="true" collection="false">
+                    <description>PLACA DEL MEDIO DE TRANSPORTE</description>
+                </field>
+                <field type="STRING" length="255" name="fecha" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="movimiento" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="error_descripcion" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="message" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="condicion_placa" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="condicion_transportista" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nombre1_transportista" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nombre2_transportista" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="apellido1_transportista" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="apellido2_transportista" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="tipo_documento_transportista" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nacionalidad_transportista" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="resultado" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="documento_transportista" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="fecha_registro" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.RESTDgaDato">
+            <description>SE ALMACENAN LOS DATOS OBTENIDOS EN LA SELECTIVIDAD DGA</description>
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="true" collection="false">
+                    <description>PK DE LA TABLA FLUJO</description>
+                </relationField>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <field type="INTEGER" length="255" name="ano_ref_year" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Frontera" fetchType="EAGER" name="aduanaregistro_cuo_cod" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.TipoDocDga" fetchType="EAGER" name="tipo_documento_doc_type" nullable="true" collection="false"/>
+                <field type="STRING" length="1" name="serie_reg_serv" nullable="true" collection="false"/>
+                <field type="STRING" length="50" name="correlativo_reg_nbr" nullable="true" collection="false"/>
+                <field type="DOUBLE" length="255" name="peso_gds_wgt" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="cantidad_sls_nbr" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Frontera" fetchType="EAGER" name="aduanaspaso_trs_cuo" nullable="true" collection="true"/>
+                <field type="STRING" length="255" name="marchamos_sls_ide" nullable="true" collection="true"/>
+                <field type="STRING" length="4" name="plazo_iti_ded" nullable="true" collection="false"/>
+                <field type="STRING" length="30" name="identificacion_drv_ide" nullable="true" collection="false"/>
+                <field type="STRING" length="17" name="placa_tra_pla_nbr" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="contenedor_ctn_ide" nullable="true" collection="true"/>
+                <field type="STRING" length="17" name="remolque_tlr_pla_nbr" nullable="false" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="fecha_registro" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries>
+                <query name="Serie" content="Select r from RESTDgaDato r &#13;&#10;where r.codigo_caso=:codigo_caso&#13;&#10;and r.serie_reg_serv=:serie_reg_serv&#13;&#10;order by r.persistenceId" returnType="com.company.model.RESTDgaDato">
+                    <queryParameters>
+                        <queryParameter name="codigo_caso" className="java.lang.String"/>
+                        <queryParameter name="serie_reg_serv" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+            </queries>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.RESTDucaOuputList">
+            <description>SE ALMACENA EL LOG DE LAS DUCASLIST QUE SE RECIBEN EL METODO CONSULTARDUCAS&#13;
+</description>
+            <fields>
+                <field type="STRING" length="255" name="doc_type" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="true" collection="false">
+                    <description>PK DE LA TABLA FLUJO</description>
+                </relationField>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <field type="INTEGER" length="255" name="ref_year" nullable="true" collection="false">
+                    <description>AÑO DE REGISTRO</description>
+                </field>
+                <field type="STRING" length="5" name="cuo_cod" nullable="true" collection="false"/>
+                <field type="STRING" length="1" name="reg_serv" nullable="true" collection="false">
+                    <description>NUMERO DE SERIE PARA TRANSITOS</description>
+                </field>
+                <field type="STRING" length="50" name="reg_nbr" nullable="true" collection="false">
+                    <description>NUMERO CORRELATIVO</description>
+                </field>
+                <field type="DOUBLE" length="255" name="gds_wgt" nullable="true" collection="false">
+                    <description>PESO DE LA MERCANCIA EN KILOGRAMOS</description>
+                </field>
+                <field type="STRING" length="255" name="sls_nbr" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="sls_ide" nullable="true" collection="false"/>
+                <field type="STRING" length="30" name="drv_ide" nullable="true" collection="false">
+                    <description>IDENTIFICADOR DE CONDUCTOR</description>
+                </field>
+                <field type="STRING" length="17" name="tra_pla_nbr" nullable="true" collection="false">
+                    <description>NUMERO DE PLACA DE TRACTOR</description>
+                </field>
+                <field type="STRING" length="17" name="tlr_pla_nbr" nullable="true" collection="false">
+                    <description>NUMERO DE PLACA DE REMOLQUE</description>
+                </field>
+                <field type="STRING" length="255" name="ctn_ide" nullable="true" collection="true">
+                    <description>contenedores</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_registro" nullable="true" collection="false">
+                    <description>FECHA Y HORA EN LA QUE SE INSERTA EL REGISTRO EN LA TABLA.</description>
+                </field>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.RESTMAG">
+            <description>SE ALMACENA EL LOG DE LOS DATOS OBTENIDOS DE LA SELECTIVIDAD DEL MAG.&#13;
+</description>
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="true" collection="false">
+                    <description>PK DE LA TABLA FLUJO</description>
+                </relationField>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <field type="STRING" length="255" name="no_duca" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="estado" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="tipo_mercaderia" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="mc_destino" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="motivo_destino" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="fecha_registro" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.RESTOutputSE">
+            <description>SE ALMACENA EL LOG DEL METODO PROCESAR SALIDA DE SISTEMAS ESPECIALES&#13;
+</description>
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="idflujo" nullable="true" collection="false">
+                    <description>PK DE LA TABLA FLUJO</description>
+                </relationField>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <field type="STRING" length="255" name="estado_registro" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="fecha_adicion" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="placa" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="rostro" nullable="true" collection="false"/>
+                <field type="STRING" length="17" name="trasera" nullable="true" collection="false"/>
+                <field type="STRING" length="20" name="contenedor" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="marchamo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="parabrisas" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="fecha_registro" nullable="true" collection="false"/>
+                <field type="DOUBLE" length="255" name="peso" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.RESTProcessedDucaList">
+            <description>SE ALMACENA LA LISTA DE SALIDA OBTENIDA DE PROCCEDDUCALIST DEL METODO PROCESARDUCAS.&#13;
+</description>
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="true" collection="false">
+                    <description>PK DE LA TABLA FLUJO</description>
+                </relationField>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <field type="STRING" length="255" name="doc_typ" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="ref_yer" nullable="true" collection="false">
+                    <description>AÑO DE REGISTRO</description>
+                </field>
+                <field type="STRING" length="5" name="cuo_cod" nullable="true" collection="false"/>
+                <field type="STRING" length="1" name="reg_ser" nullable="true" collection="false">
+                    <description>NUMERO DE SERIE NO APLICA PARA TRANSITO</description>
+                </field>
+                <field type="STRING" length="50" name="reg_nbr" nullable="true" collection="false">
+                    <description>NUMERO CORRELATIVO</description>
+                </field>
+                <field type="STRING" length="255" name="res_cod" nullable="true" collection="false">
+                    <description>CODIGO DE RESULTADO&#13;
+0 = NO_ERROR&#13;
+1= ERROR&#13;</description>
+                </field>
+                <field type="STRING" length="255" name="res_dsc" nullable="true" collection="false">
+                    <description>DESCRIPCION DEL CODIGO DE RESULTADO</description>
+                </field>
+                <field type="STRING" length="255" name="ope_nam" nullable="true" collection="false">
+                    <description>OPERACION QUE SE EJECUTO EN EL DOCUMENTO</description>
+                </field>
+                <field type="STRING" length="255" name="mrg_dsc" nullable="true" collection="false">
+                    <description>TIPO DE COMERCIO&#13;
+1-IMPORTACION&#13;
+2-EXPORTACION&#13;
+3-TRANSITO&#13;
+</description>
+                </field>
+                <field type="STRING" length="255" name="mgr_ind" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nin_flg" nullable="true" collection="false">
+                    <description>DESTINO&#13;
+1-SALIDA&#13;
+2-PARQUEO&#13;
+3-INSPECCION FISICA&#13;
+4-INSPECCION NO INTRUSIVA&#13;
+5-RETORNO</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_registro" nullable="true" collection="false">
+                    <description>FECHA Y HORA EN LA QUE SE INSERTA EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.RESTSalidaLista">
+            <description>SE ALMACENA EL LOG DEL METODO SALIDA LISTA&#13;
+</description>
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="true" collection="false">
+                    <description>PK DE LA TABLA FLUJO</description>
+                </relationField>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <field type="STRING" length="255" name="tra_pla_nbr" nullable="true" collection="false">
+                    <description>PLACA DEL TRACTOR</description>
+                </field>
+                <field type="STRING" length="5" name="cuo_cod" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="fecha_respuesta" nullable="true" collection="false"/>
+                <field type="STRING" length="2" name="respuesta" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Institucion" fetchType="LAZY" name="institucion" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.RESTScgOutput">
+            <description>SE ALMACENAN LOS DATOS QUE VIENEN DEL METODO PROCESARDUCAS&#13;
+</description>
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="true" collection="false">
+                    <description>PK DE LA TABLA FLUJO</description>
+                </relationField>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <field type="STRING" length="255" name="err_dsc" nullable="true" collection="false">
+                    <description>DESCRIPCIO DE ERROR</description>
+                </field>
+                <field type="INTEGER" length="255" name="sta" nullable="true" collection="false">
+                    <description>ESTADO&#13;
+1-FAIL server&#13;
+2-SUCCESS &#13;
+3-EMPTY</description>
+                </field>
+                <field type="INTEGER" length="255" name="bus_typ" nullable="true" collection="false">
+                    <description>	TIPO DE COMERCIO&#13;
+1-IMPORTACION&#13;
+2-EXPORTACION&#13;
+3-TRANSITO</description>
+                </field>
+                <field type="INTEGER" length="255" name="dst_typ" nullable="true" collection="false">
+                    <description>DESTINO&#13;
+1-SALIDA&#13;
+2-PARQUEO (Análisis documental, &#13;
+documentos incompletos)&#13;
+3-INSPECCION FISICA (Roja)&#13;
+4-INSPECCION NO INTRUSIVA (Naranja)&#13;
+5-RETORNO</description>
+                </field>
+                <field type="STRING" length="255" name="dst_dsc" nullable="true" collection="false">
+                    <description>RAZON POR LA CUAL EL MEDIO ES DIRIGIDO AL MC.&#13;
+</description>
+                </field>
+                <field type="STRING" length="255" name="rsn_dst" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="fecha_registro" nullable="true" collection="false">
+                    <description>FECHA Y HORA EN LA QUE SE INSERTA EL REGISTRO EN LA TABLA </description>
+                </field>
+                <field type="STRING" length="255" name="tipo" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.RESTransportMediaInfo">
+            <description>SE ALMACENA EL LOG DE LO QUE SE RECIBE EN PROCESARDUCAS.&#13;
+Se almacena el log de lo que se recibe en procesarducas</description>
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="true" collection="false">
+                    <description>PK DE LA TABLA FLUJO</description>
+                </relationField>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false">
+                    <description>CODIGO DE CASO MANEJADO EN BONITASOFT</description>
+                </field>
+                <field type="STRING" length="17" name="tra_pla_nbr" nullable="true" collection="false">
+                    <description>NUMERO DE PLACA DEL TRACTOR&#13;
+</description>
+                </field>
+                <field type="INTEGER" length="255" name="chk_pnt" nullable="true" collection="false">
+                    <description>BANDERA QUE INDICA EL PUNTO DE CHEQUEO(0=IN, 1=OUT). ES DECIR SI EL MEDIO DE TRANSPORTE ES DECIR SI EL MEDIO ESTA ENTRANDO O SALIENDO DEL RECINTO ADUANERO.</description>
+                </field>
+                <field type="LONG" length="255" name="scg_ide" nullable="true" collection="false">
+                    <description>IDENTIFICADOR O ID DE LA PETICION DEL SISTEMA DE CONTROL DE GESTION. &#13;
+</description>
+                </field>
+                <field type="STRING" length="5" name="cuo_cod" nullable="true" collection="false">
+                    <description>CODIGO DE ADUANA DONDE SE REALIZA LA OPERACION.&#13;
+</description>
+                </field>
+                <field type="STRING" length="3" name="bdr_cty" nullable="true" collection="false">
+                    <description>CODIGO DE PAIS DE PROCEDENCIA O DESTINO DEL MEDIO DE TRANSPORTE AL MOMENTO DE INGRESAR O SALIR DEL RECINTO ADUANERO.&#13;
+</description>
+                </field>
+                <field type="STRING" length="5" name="mot_cty_cod" nullable="true" collection="false"/>
+                <field type="STRING" length="35" name="mot_cty_nam" nullable="true" collection="false"/>
+                <field type="STRING" length="50" name="bar_ide" nullable="true" collection="false"/>
+                <field type="STRING" length="250" name="tipo" nullable="true" collection="false">
+                    <description>si se llena por consultar duca o procesar duca</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_registro" nullable="true" collection="false">
+                    <description>FECHA EN LA QUE SE INSERTO EL REGISTRO EN LA BASE DE DATOS</description>
+                </field>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.RestPermistList">
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Flujo" fetchType="LAZY" name="id_flujo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="codigo_caso" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="itm_nbr" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="lst_cod" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="hsc_cod" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="gds_dsc" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="per_nbr" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="per_sta" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="fecha_registro" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.TipoDocDga">
+            <description>CATÁLOGO DE TIPOS DE DOCUMENTOS GESTIONADOS POR LA DIRECCION GENERAL DE ADUANAS, LOS CUALES SE ENVIARAN O NO EN LOS PUNTOS DE ENTRADA AL PUESTO FRONTERIZO</description>
+            <fields>
+                <field type="STRING" length="2" name="codigo_documento" nullable="false" collection="false">
+                    <description>CODIGO DEL DOCUMENTO QUE SE REGISTRARA EN EL SCG EN LOS PUNTOS DE ENTRADA AL PUESTO FRONTERIZO. POR EJEMPLO:&#13;
+&#13;
+01 - DUCA T&#13;
+02 - DUCA F&#13;
+03 - DUCA D&#13;
+04 - ARIVU&#13;
+U OTROS</description>
+                </field>
+                <field type="STRING" length="255" name="nombre_documento" nullable="false" collection="false">
+                    <description>NOMBRE OFICIAL DEL DOCUMENTO QUE FORMA PARTE DE LA MERCANCIA Y DEL MEDIO DE TRANSPORTE</description>
+                </field>
+                <field type="STRING" length="1" name="estado_registro" nullable="false" collection="false">
+                    <description>ESTADO DEL REGISTRO&#13;
+"A" - ACTIVO&#13;
+"I" - INACTIVO</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints>
+                <uniqueConstraint name="UNIQUE_CONSTRAINT_2">
+                    <fieldNames>
+                        <fieldName>codigo_documento</fieldName>
+                    </fieldNames>
+                </uniqueConstraint>
+            </uniqueConstraints>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.TipoDocViaje">
+            <description>documentos de viaje válidos terrestre</description>
+            <fields>
+                <field type="STRING" length="255" name="codigo_documento" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nombre_documento" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="estado_registro" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="fecha_adicion" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="usuario_adicion" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="usuario_modificacion" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="fecha_modificacion" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.TipoIncidente">
+            <description>TABLA QUE ALMACENA LOS TIPOS DE INCIDENTE</description>
+            <fields>
+                <field type="STRING" length="2" name="codigo_tipo_incidente" nullable="false" collection="false">
+                    <description>CODIGO DE TIPO DE INCIDENTE</description>
+                </field>
+                <field type="STRING" length="255" name="nombre_tipo_incidente" nullable="false" collection="false">
+                    <description>NOMBRE DEL TIPO DE INCIDENTE</description>
+                </field>
+                <field type="STRING" length="1" name="estado_tipo_incidente" nullable="false" collection="false">
+                    <description>ESTADO DEL TIPO DE INCIDENTE</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="LOCALDATETIME" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.TipoMedioTransporte">
+            <description>TIPOS DE MEDIOS DE TRANSPORTE QUE ATRAVIESAN EL PF. ESTA TABLA CORRESPONDERÁ A LA QUUE ADMINISTRE LA DGA.</description>
+            <fields>
+                <field type="STRING" length="2" name="codigo_tipo_mt" nullable="false" collection="false">
+                    <description>CODIGO DEL TIPO DE MEDIO DE TRANSPORTE. ESTA TABLA CORREPSONDERÁ A LA QUUE MANEJE LA DGA.</description>
+                </field>
+                <field type="STRING" length="255" name="nombre_tipo_mt" nullable="false" collection="false">
+                    <description>NOMBRE DEL TIPO DE LOS MEDIOS DE TRANSPORTE.</description>
+                </field>
+                <field type="STRING" length="1" name="estado_registro" nullable="false" collection="false">
+                    <description>ESTADO DEL REGISTRO&#13;
+"A" - ACTIVO&#13;
+"I" - INACTIVO</description>
+                </field>
+                <field type="STRING" length="255" name="fecha_adicion" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="fecha_modificacion" nullable="true" collection="false">
+                    <description>FECHA DEL SISTEMA DE LA ULTIMA MODIFICACIÓN EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_adicion" nullable="false" collection="false">
+                    <description>FECHA DEL SISTEMA EN QUE SE ADICIONO EL REGISTRO EN LA TABLA</description>
+                </field>
+                <field type="STRING" length="512" name="usuario_modificacion" nullable="true" collection="false">
+                    <description>ULTIMO USUARIO DEL SISTEMA QUE MODIFICO  EL REGISTRO EN LA TABLA</description>
+                </field>
+            </fields>
+            <uniqueConstraints>
+                <uniqueConstraint name="UNIQUE_CONSTRAINT_9">
+                    <fieldNames>
+                        <fieldName>codigo_tipo_mt</fieldName>
+                    </fieldNames>
+                </uniqueConstraint>
+            </uniqueConstraints>
+            <queries/>
+            <indexes/>
+        </businessObject>
+    </businessObjects>
+</businessObjectModel>

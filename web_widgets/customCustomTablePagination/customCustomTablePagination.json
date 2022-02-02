@@ -1,0 +1,97 @@
+{
+  "modelVersion" : "2.2",
+  "previousArtifactVersion" : "1.10.12",
+  "properties" : [
+    {
+      "label" : "Headers",
+      "name" : "headers",
+      "caption" : "Comma-separated list",
+      "help" : "If you specify an expression, the result must be an array of strings",
+      "type" : "collection",
+      "defaultValue" : [
+        "Id",
+        "Name",
+        "Description",
+        "Date"
+      ],
+      "bond" : "expression"
+    },
+    {
+      "label" : "Content",
+      "name" : "content",
+      "help" : "Array used to populate the table. Can be a list of objects. Use 'Column keys' to refine content",
+      "type" : "collection",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Column keys",
+      "name" : "columnsKey",
+      "caption" : "Use <a href=\"javascript:void(0);\" open-help=\"filters\" editor-mode=\"page\">Filters</a> to format the data (e.g. <span ng-non-bindable>columnKey|uiDate</span>)",
+      "help" : "When 'Content' is a list of objects, specifies the attributes to display in the table columns",
+      "type" : "collection",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Selected Row",
+      "name" : "selectedRow",
+      "type" : "text",
+      "bond" : "variable"
+    },
+    {
+      "label" : "Current Page",
+      "name" : "currentPage",
+      "type" : "integer",
+      "defaultValue" : 1,
+      "bond" : "expression"
+    },
+    {
+      "label" : "Max Size",
+      "name" : "maxSize",
+      "type" : "integer",
+      "defaultValue" : 5,
+      "bond" : "expression"
+    },
+    {
+      "label" : "Items Per Page",
+      "name" : "itemsPerPage",
+      "type" : "integer",
+      "defaultValue" : 25,
+      "bond" : "expression"
+    }
+  ],
+  "id" : "customCustomTablePagination",
+  "name" : "customTablePagination",
+  "lastUpdate" : 1643214734722,
+  "template" : "@customCustomTablePagination.tpl.html",
+  "controller" : "@customCustomTablePagination.ctrl.js",
+  "custom" : true,
+  "assets" : [
+    {
+      "id" : "d65a855c-b45e-45f0-86f0-26024a3dc146",
+      "name" : "angular-strap.min.js",
+      "type" : "js",
+      "order" : 1,
+      "external" : false
+    },
+    {
+      "id" : "80e48ff5-0d27-4a8b-a3c7-f528be539d5e",
+      "name" : "filter.js",
+      "type" : "js",
+      "order" : 3,
+      "external" : false
+    },
+    {
+      "id" : "d77ea7d9-28e5-4952-8b24-d4030c183818",
+      "name" : "dirPagination.js",
+      "type" : "js",
+      "order" : 2,
+      "external" : false
+    }
+  ],
+  "requiredModules" : [
+    "angular.filter",
+    "angularUtils.directives.dirPagination"
+  ],
+  "type" : "widget",
+  "hasHelp" : false
+}
